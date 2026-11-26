@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDP Health Checkup | CDP Transformation – xponent.ai</title>
+<meta name="description" content="A read-only review of an existing CDP and warehouse in two to three weeks, with evidence behind every finding and a prioritised plan.">
+<style>
+/* Theme tokens measured from xponent.ai. Fonts are the site's own Gilroy files. */
+@font-face{font-family:"Gilroy-Bold";src:url("assets/fonts/Gilroy-Bold.ttf") format("truetype");font-weight:700}
+@font-face{font-family:"Gilroy-Medium";src:url("assets/fonts/Gilroy-Medium.ttf") format("truetype");font-weight:500}
+@font-face{font-family:"Gilroy-Regular";src:url("assets/fonts/Gilroy-Regular.ttf") format("truetype");font-weight:400}
+:root{--orange:#FF672E;--teal:#00B2A9;--amber:#FFAA05;--peach:#FBDACE;--grey:#F2F2F2;--navy:#17173A;--ink:#1C1C1C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;font-family:"Gilroy-Medium",Poppins,Arial,sans-serif;color:var(--ink);background:#fff;font-size:18px;line-height:28px}
+h1,h2,h3,h4{font-family:"Gilroy-Bold",Poppins,Arial,sans-serif;margin:0}
+a{color:inherit}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 14px;z-index:10}
+.skip:focus{left:8px;top:8px}
+
+/* header (same as site) */
+.hdr{height:122px;display:flex;align-items:center;gap:36px;padding:0 40px;background:#fff}
+.hdr .logo img{display:block;width:119px;height:auto}
+.nav{display:flex;gap:40px;margin-left:12px;align-items:center;font-size:16px}
+.nav a{text-decoration:none;white-space:nowrap}
+.nav a.on{color:var(--orange)}
+.nav .caret{font-size:9px;margin-left:8px}
+.hdr .push{flex:1}
+.btn{display:inline-block;text-decoration:none;font-family:"Gilroy-Bold",Arial,sans-serif;text-transform:uppercase;font-size:16px;line-height:1;padding:17px 22px;border-radius:50px;border:2px solid var(--orange);cursor:pointer}
+.btn.solid{background:var(--orange);color:#fff}
+.btn.line{background:#fff;color:var(--orange)}
+.btn.white{background:#fff;color:var(--orange);border-color:#fff;padding:18px 34px}
+.btn.big{font-size:17px}
+.search{font-size:18px;margin-left:6px}
+
+
+/* Capabilities dropdown (the ten team services) */
+.nav .dd{position:relative;padding:40px 0;margin:-40px 0}
+.nav .menu{display:none;position:absolute;top:100%;left:-18px;min-width:380px;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.22);border-top:3px solid var(--orange);padding:8px 0;margin:0;list-style:none;z-index:30}
+.nav .dd:hover .menu,.nav .dd:focus-within .menu{display:block}
+.nav .menu a{display:block;padding:10px 22px;font-size:15px;line-height:22px;white-space:normal}
+.nav .menu a:hover{background:var(--grey);color:var(--orange)}
+.nav .menu a.cur{color:var(--orange);font-family:"Gilroy-Bold",Arial,sans-serif}
+
+/* hero */
+.hero{background:var(--teal);color:#fff;border-bottom:2px solid #111;padding:38px 47px 38px}
+.crumb{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:14px;line-height:20px;padding:10px 15px 0}
+.crumb a{text-decoration:none}
+.crumb span{margin:0 14px}
+.hero-grid{display:grid;grid-template-columns:1fr 520px;gap:48px;align-items:center;margin-top:0}
+.hero .kicker{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:15px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px}
+.hero h1{font-size:52px;line-height:62px;color:#fff}
+.hero p.lede{font-size:20px;line-height:30px;margin:20px 0 28px;max-width:640px}
+.hero .sub{font-size:15px;line-height:22px;margin:14px 0 0}
+.hero .art{width:100%;height:auto;aspect-ratio:640/440;display:block}
+
+/* page layout: sibling services menu + content */
+.layout{max-width:1100px;margin:0 auto;padding:36px 37px 20px}
+.content{min-width:0}
+
+/* previous / next */
+.pn{display:flex;justify-content:space-between;padding:22px 47px;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:18px}
+.pn a{text-decoration:none}
+.pn a:hover{color:var(--orange)}
+
+/* quick table of contents */
+.toc{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 6px}
+.toc a{border:2px solid var(--orange);color:var(--orange);border-radius:50px;padding:8px 18px;text-decoration:none;font-family:"Gilroy-Bold",Arial,sans-serif;text-transform:uppercase;font-size:13px;line-height:1}
+.toc a:hover{background:var(--orange);color:#fff}
+
+section.blk{padding:38px 0 8px}
+section.blk h2{font-size:34px;line-height:42px;color:var(--navy)}
+section.blk>p.intro{margin:12px 0 22px;max-width:860px}
+section.blk>p.intro:empty{margin:6px 0 0}
+.cards{display:grid;gap:18px}
+.cards.c3{grid-template-columns:repeat(3,1fr)}
+.cards.c2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border-top:6px solid var(--orange);box-shadow:0 6px 18px rgba(0,0,0,.14);padding:20px 20px 24px}
+.card h3{font-size:22px;line-height:28px;color:var(--navy);margin-bottom:8px}
+.card p{margin:0;font-size:16.5px;line-height:25px}
+.card .tag{display:inline-block;margin-top:12px;background:var(--amber);color:#111;font-size:12.5px;line-height:1;padding:6px 12px;border-radius:50px}
+.card.ai{border-top-color:var(--teal)}
+.svc .card{display:flex;flex-direction:column}
+.svc ul{margin:0;padding-left:18px;font-size:16px;line-height:24px}
+.svc li{margin:0 0 9px}
+.svc li strong{font-family:"Gilroy-Bold",Arial,sans-serif;color:var(--navy)}
+.svc .tag{align-self:flex-start;margin-top:auto}
+.depth{margin-top:20px}
+.depth .h{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin:0 0 8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips span{background:var(--grey);border-radius:50px;padding:7px 14px;font-size:14.5px;line-height:20px}
+
+/* approach */
+.approach{background:var(--peach);padding:36px 30px 34px;margin-top:34px}
+.approach h2{font-size:34px;line-height:42px;color:var(--navy)}
+.approach .big{margin:12px 0 22px;max-width:900px;font-size:19px;line-height:29px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:#fff;padding:18px 18px 20px;box-shadow:0 6px 16px rgba(0,0,0,.14)}
+.step .n{display:inline-block;background:var(--orange);color:#fff;font-family:"Gilroy-Bold",Arial,sans-serif;border-radius:50px;padding:3px 14px;font-size:15px;line-height:22px}
+.step h3{font-size:21px;line-height:27px;margin:10px 0 6px}
+.step p{margin:0;font-size:15.5px;line-height:23px}
+.approach .note{margin:18px 0 0;font-size:15.5px}
+
+/* value */
+.value{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.value article{border-left:6px solid var(--orange);background:var(--grey);padding:16px 18px 18px}
+.value h3{font-size:21px;line-height:27px;margin-bottom:6px}
+.value p{margin:0;font-size:16px;line-height:24px}
+
+/* FAQ */
+.faq details{border-top:1px solid #d8d8d8;padding:4px 0}
+.faq details:last-of-type{border-bottom:1px solid #d8d8d8}
+.faq summary{cursor:pointer;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:20px;line-height:28px;padding:14px 40px 14px 0;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:8px;color:var(--orange);font-size:30px;line-height:36px}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0 0 16px;max-width:860px}
+
+
+/* service blocks: same pattern as the other product pages */
+.whathead{max-width:1366px;margin:30px auto 0;padding:10px 37px 26px}
+.whathead h2{font-size:38px;line-height:46px;color:var(--navy)}
+.whathead p{margin:10px 0 0;max-width:900px}
+.band{padding:40px 37px}
+.band.peach{background:var(--peach)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1366px;margin:0 auto}
+.sc{background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.22);padding:24px 22px 28px}
+.sc .eyebrow{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:13px;line-height:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin:0 0 8px}
+.sc h2{font-size:28px;line-height:35px;margin-bottom:14px;color:var(--ink)}
+.sc p{margin:0}
+.sc p.inc{margin-top:14px;font-size:15.5px;line-height:23px;color:#444}
+.sc p.inc strong{font-family:"Gilroy-Bold",Arial,sans-serif;color:var(--orange)}
+.sc .tag{display:inline-block;margin-top:14px;background:var(--amber);color:#111;font-size:12.5px;line-height:1;padding:6px 12px;border-radius:50px}
+.gfx{position:relative;background:var(--grey);padding:70px 18px 18px;min-height:420px;display:flex;align-items:center}
+.gfx svg{width:100%;height:auto;display:block}
+.gfx text{font-family:"Gilroy-Medium",Arial,sans-serif;fill:var(--ink)}
+.gfx .b{font-family:"Gilroy-Bold",Arial,sans-serif}
+.gfx .w{fill:#fff}
+.pill{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:"Gilroy-Medium",Arial,sans-serif;font-size:28px;line-height:38px;padding:6px 48px;border-radius:0 0 28px 28px;white-space:nowrap}
+.row.flip .sc{order:2}
+.row.flip .gfx{order:1}
+.wrap{max-width:1100px;margin:0 auto;padding:10px 37px 0}
+@media (max-width:1100px){
+  .whathead{padding:10px 20px 20px}
+  .whathead h2{font-size:30px;line-height:38px}
+  .band{padding:28px 20px}
+  .row,.row.flip{grid-template-columns:1fr;gap:26px}
+  .row.flip .sc,.row.flip .gfx{order:0}
+  .pill{font-size:21px;padding:6px 24px;white-space:normal;text-align:center;width:90%}
+  .gfx{padding-top:82px;min-height:0}
+  .wrap{padding:10px 20px 0}
+}
+
+
+/* approach band (orange band with white cards, as the Generative AI tile) and toolkit cards */
+.approach{background:var(--orange);color:#fff;padding:60px 37px 56px;margin:40px 0 0}
+.approach .in{max-width:1100px;margin:0 auto}
+.approach h2{color:#fff}
+.approach .big{color:#fff;max-width:860px}
+/* ONE card spec for the whole page (the site's own tile card): white, soft shadow, 24/22/28 padding, 28/35 heading, 18/28 text, 14px amber badges */
+.sc,.step,.asset,.value article{background:#fff;color:var(--ink);box-shadow:0 8px 22px rgba(0,0,0,.22);padding:24px 22px 28px;border:0;border-radius:0}
+.sc h2,.step h3,.asset h3,.value article h3{font-family:"Gilroy-Bold",Poppins,Arial,sans-serif;font-size:28px;line-height:35px;color:var(--ink);margin:0 0 14px}
+.sc p,.step p,.asset p,.value article p{margin:0;font-size:18px;line-height:28px}
+.sc .tag,.step .tag,.asset .used span{display:inline-block;background:var(--amber);color:#111;font-size:14px;line-height:1;padding:7px 14px;border-radius:50px}
+.step .tag{margin-top:14px}
+.approach .steps{grid-template-columns:repeat(2,1fr);gap:24px}
+.own{list-style:none;margin:28px 0 0;padding:20px 0 0;border-top:2px solid rgba(255,255,255,.55);display:flex;gap:14px 40px;flex-wrap:wrap;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:18px;line-height:26px}
+.own li{display:flex;align-items:center;gap:10px}
+.own li::before{content:"\2713";display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#fff;color:var(--orange);font-size:15px;line-height:1}
+.value{gap:24px}
+@media (max-width:1100px){
+  .approach{padding:40px 20px}
+  .approach .steps{grid-template-columns:1fr}
+}
+
+.act{margin-top:20px}
+
+/* next best action */
+.cta{background:var(--peach);color:var(--ink);text-align:center;padding:56px 37px;margin-top:0}
+.cta h2{font-size:38px;line-height:48px;color:var(--navy)}
+.cta p{max-width:720px;margin:12px auto 26px}
+
+/* footer */
+.ftr{border-top:1px solid #e3e3e3;padding:34px 47px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;font-size:16px}
+.ftr nav{display:flex;gap:30px;flex-wrap:wrap}
+.ftr a{text-decoration:none}
+.ftr .push{flex:1}
+.ftr .soc{display:flex;gap:14px}
+.ftr .soc img{width:26px;height:26px;display:block}
+.ftr .legal{width:100%;display:flex;gap:30px;flex-wrap:wrap;font-size:14px;color:#555}
+
+@media (max-width:1100px){
+  .hdr{height:auto;padding:16px 20px;flex-wrap:wrap;gap:14px}
+  .nav{gap:18px;flex-wrap:wrap;margin:0}
+  .nav .dd{padding:0;margin:0}
+  .nav .menu{min-width:0;width:calc(100vw - 40px)}
+  .hero{padding:26px 20px 28px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .hero h1{font-size:36px;line-height:44px}
+  .layout{grid-template-columns:1fr;padding:24px 20px}
+          .cards.c3,.cards.c2,.steps,.value{grid-template-columns:1fr}
+  section.blk h2,.approach h2{font-size:28px;line-height:36px}
+}
+
+/* sub-pages: previous / next strip, deliverables band, tile buttons */
+.pn{border-bottom:1px solid #e3e3e3}
+.pn .mid{font-family:"Gilroy-Medium",Arial,sans-serif;font-size:15px;color:#555}
+.deliver{padding:52px 37px 56px}
+.deliver .in{max-width:1366px;margin:0 auto}
+.deliver h2{font-size:38px;line-height:46px;color:var(--navy)}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
+.act{margin-top:20px}
+@media (max-width:1100px){
+  .deliver{padding:36px 20px}
+  .deliver h2{font-size:30px;line-height:38px}
+  .dgrid{grid-template-columns:1fr}
+  .pn{padding:18px 20px;font-size:16px;flex-wrap:wrap;gap:8px 24px}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <a class="logo" href="https://xponent.ai/"><img src="assets/img/logo.png" alt="xponent.ai"></a>
+  <nav class="nav" aria-label="Main">
+    <div class="dd">
+      <a class="on" href="https://xponent.ai/product/" aria-haspopup="true">Capabilities<span class="caret">&#9660;</span></a>
+      <ul class="menu" aria-label="Capabilities">
+        <li><a href="https://xponent.ai/product/">Data strategy and AI advisory services</a></li>
+        <li><a href="https://xponent.ai/product/">Databricks data engineering services</a></li>
+        <li><a href="https://xponent.ai/product/">Databricks Genie &amp; Agentic AI solutions</a></li>
+        <li><a class="cur" aria-current="page" href="index.html">Customer Data Platform (CDP) transformation</a></li>
+        <li><a href="https://xponent.ai/product/">SAP-Databricks solution engineering</a></li>
+        <li><a href="https://xponent.ai/product/">Data platform modernization</a></li>
+        <li><a href="https://xponent.ai/product/">Data migration services</a></li>
+        <li><a href="https://xponent.ai/product/">Data &amp; AI governance solutions</a></li>
+        <li><a href="https://xponent.ai/product/">Data &amp; AI cost management &amp; optimization</a></li>
+        <li><a href="https://xponent.ai/product/">Databricks managed services</a></li>
+      </ul>
+    </div>
+    <a href="https://xponent.ai/retail/">Industries &amp; Use Cases<span class="caret">&#9660;</span></a>
+    <a href="https://xponent.ai/engagement-models/">Engagement Models<span class="caret">&#9660;</span></a>
+    <a href="https://xponent.ai/about/">About Us</a>
+    <a href="https://xponent.ai/career/">Career</a>
+  </nav>
+  <span class="push"></span>
+  <a class="btn solid" href="https://xponent.ai/resources-library/">Resources</a>
+  <a class="btn line" href="https://xponent.ai/contact-us/">Contact us</a>
+  <span class="search" aria-hidden="true">&#9906;</span>
+</header>
+
+<main id="main">
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-grid">
+    <div>
+      <p class="kicker">CDP Transformation</p>
+      <h1 id="h1">CDP Health Checkup</h1>
+      <p class="lede">A read-only review of an existing CDP and warehouse in two to three weeks, with evidence behind every finding and a prioritised plan.</p>
+      <a class="btn white big" href="https://xponent.ai/contact-us/">Write to us for a quick CDP health checkup</a>
+    </div>
+    <svg class="art" viewBox="0 0 640 440" role="img" aria-label="CDP Health Checkup: Review, Scoring, Roadmap"><rect width="640" height="440" fill="#0A8F88"/><circle cx="320" cy="230" r="205" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/><circle cx="320" cy="230" r="140" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 8"/><g stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-dasharray="3 7" fill="none"><path d="M320 230 L320 82"/><path d="M320 230 L500 330"/><path d="M320 230 L140 330"/></g><g font-family="Gilroy-Bold,Arial,sans-serif" font-size="17" text-anchor="middle"><rect x="245" y="60" width="150" height="44" rx="22" fill="#fff"/><text x="320" y="88" fill="#FF672E">Review</text><rect x="425" y="308" width="150" height="44" rx="22" fill="#fff"/><text x="500" y="336" fill="#FF672E">Scoring</text><rect x="65" y="308" width="150" height="44" rx="22" fill="#fff"/><text x="140" y="336" fill="#FF672E">Roadmap</text></g><circle cx="320" cy="230" r="82" fill="#FFAA05"/><circle cx="320" cy="230" r="68" fill="#FF672E"/><text x="320" y="225" text-anchor="middle" font-family="Gilroy-Bold,Arial,sans-serif" font-size="18" fill="#fff">CDP Health</text><text x="320" y="247" text-anchor="middle" font-family="Gilroy-Bold,Arial,sans-serif" font-size="18" fill="#fff">Checkup</text></svg>
+  </div>
+</section>
+
+<nav class="pn" aria-label="Previous and next service"><a href="audience-activation.html">&larr; Previous: Audience Activation</a><a href="index.html">CDP Transformation &rarr;</a></nav>
+<section class="band peach" aria-labelledby="s1"><div class="row">
+  <div class="sc"><h2 id="s1">Source and Identity Review: What Is Collected and How It Joins</h2>
+    <p>The review begins with a list of every customer data source, its identifiers and its consent records. Match rates and duplicate rates are measured on live data in read-only mode. The output shows which sources join cleanly, which join poorly and which customers cannot be reached for lack of consent.</p></div>
+  <div class="gfx"><div class="pill">Source and Identity Review</div>
+    <svg viewBox="0 0 600 340" role="img" aria-label="Sources, identity and consent reviewed in read-only mode, each with a measured result and linked evidence"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FF672E"/></marker></defs><rect x="16" y="22" width="180" height="230" rx="12" fill="#fff" stroke="#FF672E" stroke-width="2"/><rect x="16" y="22" width="180" height="38" rx="12" fill="#FF672E"/><text class="b w" x="106.0" y="46.25" font-size="15" text-anchor="middle">SOURCES</text><text x="106" y="96" font-size="14" text-anchor="middle">Join quality</text><rect x="36" y="112" width="140" height="18" rx="9" fill="#E3E3E3"/><rect x="36" y="112" width="105" height="18" rx="9" fill="#FFAA05"/><rect x="36" y="152" width="110" height="8" fill="#E3E3E3"/><rect x="36" y="172" width="84" height="8" fill="#E3E3E3"/><rect x="46" y="204" width="120" height="30" rx="15" fill="#FFAA05"/><text x="106.0" y="223.55" font-size="13" text-anchor="middle">evidence</text><rect x="212" y="22" width="180" height="230" rx="12" fill="#fff" stroke="#FF672E" stroke-width="2"/><rect x="212" y="22" width="180" height="38" rx="12" fill="#FF672E"/><text class="b w" x="302.0" y="46.25" font-size="15" text-anchor="middle">IDENTITY</text><text x="302" y="96" font-size="14" text-anchor="middle">Duplicate rate</text><rect x="232" y="112" width="140" height="18" rx="9" fill="#E3E3E3"/><rect x="232" y="112" width="56" height="18" rx="9" fill="#FFAA05"/><rect x="232" y="152" width="110" height="8" fill="#E3E3E3"/><rect x="232" y="172" width="84" height="8" fill="#E3E3E3"/><rect x="242" y="204" width="120" height="30" rx="15" fill="#FFAA05"/><text x="302.0" y="223.55" font-size="13" text-anchor="middle">evidence</text><rect x="408" y="22" width="180" height="230" rx="12" fill="#fff" stroke="#FF672E" stroke-width="2"/><rect x="408" y="22" width="180" height="38" rx="12" fill="#FF672E"/><text class="b w" x="498.0" y="46.25" font-size="15" text-anchor="middle">CONSENT</text><text x="498" y="96" font-size="14" text-anchor="middle">Reachable customers</text><rect x="428" y="112" width="140" height="18" rx="9" fill="#E3E3E3"/><rect x="428" y="112" width="84" height="18" rx="9" fill="#FFAA05"/><rect x="428" y="152" width="110" height="8" fill="#E3E3E3"/><rect x="428" y="172" width="84" height="8" fill="#E3E3E3"/><rect x="438" y="204" width="120" height="30" rx="15" fill="#FFAA05"/><text x="498.0" y="223.55" font-size="13" text-anchor="middle">evidence</text><rect x="40" y="278" width="520" height="44" rx="22" fill="#FF672E"/><text class="b w" x="300.0" y="305.6" font-size="16" text-anchor="middle">MEASURED ON LIVE DATA · READ-ONLY</text></svg>
+  </div>
+</div></section>
+
+<section class="band" aria-labelledby="s2"><div class="row flip">
+  <div class="sc"><h2 id="s2">Quality and Maturity Scoring: Every Score Linked to Evidence</h2>
+    <p>Quality and Maturity Scoring rates data quality, identity, definitions, activation and governance on one scale. AI agents run the repetitive checks, such as null rates, duplicate counts and stale feeds. Each score links to the query or record that supports it, so any finding can be checked.</p></div>
+  <div class="gfx"><div class="pill">Quality and Maturity Scoring</div>
+    <svg viewBox="0 0 600 340" role="img" aria-label="Five areas scored on one scale, each score linked to its evidence, with AI agents running checks and consultants reviewing"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FF672E"/></marker></defs><text x="20" y="45" font-size="15" text-anchor="start">Data quality</text><rect x="150" y="28" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="28" width="189" height="20" rx="10" fill="#FF672E"/><rect x="446" y="26" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="43.2" font-size="12" text-anchor="middle">linked evidence</text><text x="20" y="97" font-size="15" text-anchor="start">Identity</text><rect x="150" y="80" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="80" width="135" height="20" rx="10" fill="#FF672E"/><rect x="446" y="78" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="95.2" font-size="12" text-anchor="middle">linked evidence</text><text x="20" y="149" font-size="15" text-anchor="start">Definitions</text><rect x="150" y="132" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="132" width="162" height="20" rx="10" fill="#FF672E"/><rect x="446" y="130" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="147.2" font-size="12" text-anchor="middle">linked evidence</text><text x="20" y="201" font-size="15" text-anchor="start">Activation</text><rect x="150" y="184" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="184" width="108" height="20" rx="10" fill="#FF672E"/><rect x="446" y="182" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="199.2" font-size="12" text-anchor="middle">linked evidence</text><text x="20" y="253" font-size="15" text-anchor="start">Governance</text><rect x="150" y="236" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="236" width="148" height="20" rx="10" fill="#FF672E"/><rect x="446" y="234" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="251.2" font-size="12" text-anchor="middle">linked evidence</text><rect x="20" y="284" width="270" height="40" rx="20" fill="#FF672E"/><text class="b w" x="155.0" y="308.9" font-size="14" text-anchor="middle">AI AGENTS RUN THE CHECKS</text><rect x="310" y="284" width="270" height="40" rx="20" fill="#FF672E"/><text class="b w" x="445.0" y="308.9" font-size="14" text-anchor="middle">CONSULTANTS REVIEW</text></svg>
+  </div>
+</div></section>
+
+<section class="band peach" aria-labelledby="s3"><div class="row">
+  <div class="sc"><h2 id="s3">Findings and Roadmap: Signed Off by a Consultant</h2>
+    <p>Every finding is reviewed and signed off by a consultant before it reaches the report. The roadmap ranks fixes by effect and effort. The next step is the client’s choice: act on the plan in-house, or ask our team to carry out the work and keep the platform healthy.</p></div>
+  <div class="gfx"><div class="pill">Findings and Roadmap</div>
+    <svg viewBox="0 0 600 340" role="img" aria-label="Findings are signed off by a consultant and ranked into a roadmap, after which the work is done in-house or by Xponent"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FF672E"/></marker></defs><rect x="14" y="30" width="150" height="150" rx="10" fill="#fff" stroke="#FF672E" stroke-width="2"/><text class="b" x="89" y="58" font-size="15" text-anchor="middle">Findings</text><rect x="32" y="74" width="114" height="10" fill="#E3E3E3"/><rect x="32" y="104" width="114" height="10" fill="#E3E3E3"/><rect x="32" y="134" width="114" height="10" fill="#E3E3E3"/><path d="M164 105 L206 105" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><circle cx="250" cy="105" r="46" fill="#FF672E"/><text class="b w" x="250" y="102" font-size="14" text-anchor="middle">Consultant</text><text class="b w" x="250" y="120" font-size="14" text-anchor="middle">sign-off</text><path d="M296 105 L338 105" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="340" y="30" width="246" height="150" rx="10" fill="#fff" stroke="#FF672E" stroke-width="2"/><text class="b" x="463" y="58" font-size="15" text-anchor="middle">Roadmap ranked</text><text x="358" y="92" font-size="13" text-anchor="start">1  High effect, low effort</text><text x="358" y="122" font-size="13" text-anchor="start">2  High effect, high effort</text><text x="358" y="152" font-size="13" text-anchor="start">3  Lower effect</text><path d="M463 180 L463 214" stroke="#FF672E" stroke-width="2.5" fill="none"/><path d="M463 214 H150 V240 M463 214 H450 V240" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="30" y="242" width="240" height="54" rx="8" fill="#fff" stroke="#FF672E" stroke-width="2"/><text class="b" x="150.0" y="274.25" font-size="15" text-anchor="middle">Act on the plan in-house</text><rect x="330" y="242" width="240" height="54" rx="8" fill="#FFAA05"/><text class="b" x="450.0" y="274.25" font-size="15" text-anchor="middle">Xponent carries out the work</text></svg>
+  </div>
+</div></section>
+
+<section class="deliver" aria-labelledby="dh"><div class="in">
+  <h2 id="dh">What you receive</h2>
+  <div class="dgrid">
+    <article class="asset"><h3>Findings report</h3><p>Each finding with its evidence and the consultant who signed it off.</p></article>
+    <article class="asset"><h3>Prioritised roadmap</h3><p>Fixes ranked by effect and effort.</p></article>
+    <article class="asset"><h3>Evidence pack</h3><p>The queries and records behind every score.</p></article>
+  </div>
+</div></section>
+
+<section class="cta" aria-labelledby="ctah">
+  <h2 id="ctah">Write to us for a quick CDP health checkup</h2>
+  <p>Tell us where your customer data is today. We will tell you what to fix first.</p>
+  <a class="btn solid big" href="https://xponent.ai/contact-us/">Write to us</a>
+</section>
+</main>
+
+<footer class="ftr">
+  <nav aria-label="Footer">
+    <a href="https://xponent.ai/product/">Services</a><a href="https://xponent.ai/engagement-models/">Engagement Models</a><a href="https://xponent.ai/about/">About Us</a><a href="https://xponent.ai/career/">Career</a><a href="https://xponent.ai/resources-library/">Resources</a>
+  </nav>
+  <span class="push"></span>
+  <div class="soc">
+    <a href="https://www.facebook.com/profile.php?id=61556573188140" aria-label="Facebook"><img src="assets/img/ic-facebook.png" alt=""></a>
+    <a href="https://www.linkedin.com/company/xponent-ai/" aria-label="LinkedIn"><img src="assets/img/ic-linkedin.png" alt=""></a>
+    <a href="https://twitter.com/xponent_ai" aria-label="X"><img src="assets/img/ic-twitter.png" alt=""></a>
+    <a href="https://youtube.com" aria-label="YouTube"><img src="assets/img/ic-youtube.png" alt=""></a>
+  </div>
+  <div class="legal"><span>2026 <a href="https://xponent.ai/">xponent.ai</a> All rights reserved.</span><a href="https://xponent.ai/privacy/">Privacy Policy</a><a href="https://xponent.ai/terms-of-use/">Terms Of Use</a></div>
+</footer>
+</body>
+</html>

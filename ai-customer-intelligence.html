@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Customer Intelligence | CDP Transformation – xponent.ai</title>
+<meta name="description" content="Customer measures defined once, answers that match across every report, and an agentic AI workspace where agents propose and people approve.">
+<style>
+/* Theme tokens measured from xponent.ai. Fonts are the site's own Gilroy files. */
+@font-face{font-family:"Gilroy-Bold";src:url("assets/fonts/Gilroy-Bold.ttf") format("truetype");font-weight:700}
+@font-face{font-family:"Gilroy-Medium";src:url("assets/fonts/Gilroy-Medium.ttf") format("truetype");font-weight:500}
+@font-face{font-family:"Gilroy-Regular";src:url("assets/fonts/Gilroy-Regular.ttf") format("truetype");font-weight:400}
+:root{--orange:#FF672E;--teal:#00B2A9;--amber:#FFAA05;--peach:#FBDACE;--grey:#F2F2F2;--navy:#17173A;--ink:#1C1C1C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;font-family:"Gilroy-Medium",Poppins,Arial,sans-serif;color:var(--ink);background:#fff;font-size:18px;line-height:28px}
+h1,h2,h3,h4{font-family:"Gilroy-Bold",Poppins,Arial,sans-serif;margin:0}
+a{color:inherit}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 14px;z-index:10}
+.skip:focus{left:8px;top:8px}
+
+/* header (same as site) */
+.hdr{height:122px;display:flex;align-items:center;gap:36px;padding:0 40px;background:#fff}
+.hdr .logo img{display:block;width:119px;height:auto}
+.nav{display:flex;gap:40px;margin-left:12px;align-items:center;font-size:16px}
+.nav a{text-decoration:none;white-space:nowrap}
+.nav a.on{color:var(--orange)}
+.nav .caret{font-size:9px;margin-left:8px}
+.hdr .push{flex:1}
+.btn{display:inline-block;text-decoration:none;font-family:"Gilroy-Bold",Arial,sans-serif;text-transform:uppercase;font-size:16px;line-height:1;padding:17px 22px;border-radius:50px;border:2px solid var(--orange);cursor:pointer}
+.btn.solid{background:var(--orange);color:#fff}
+.btn.line{background:#fff;color:var(--orange)}
+.btn.white{background:#fff;color:var(--orange);border-color:#fff;padding:18px 34px}
+.btn.big{font-size:17px}
+.search{font-size:18px;margin-left:6px}
+
+
+/* Capabilities dropdown (the ten team services) */
+.nav .dd{position:relative;padding:40px 0;margin:-40px 0}
+.nav .menu{display:none;position:absolute;top:100%;left:-18px;min-width:380px;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.22);border-top:3px solid var(--orange);padding:8px 0;margin:0;list-style:none;z-index:30}
+.nav .dd:hover .menu,.nav .dd:focus-within .menu{display:block}
+.nav .menu a{display:block;padding:10px 22px;font-size:15px;line-height:22px;white-space:normal}
+.nav .menu a:hover{background:var(--grey);color:var(--orange)}
+.nav .menu a.cur{color:var(--orange);font-family:"Gilroy-Bold",Arial,sans-serif}
+
+/* hero */
+.hero{background:var(--teal);color:#fff;border-bottom:2px solid #111;padding:38px 47px 38px}
+.crumb{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:14px;line-height:20px;padding:10px 15px 0}
+.crumb a{text-decoration:none}
+.crumb span{margin:0 14px}
+.hero-grid{display:grid;grid-template-columns:1fr 520px;gap:48px;align-items:center;margin-top:0}
+.hero .kicker{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:15px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px}
+.hero h1{font-size:52px;line-height:62px;color:#fff}
+.hero p.lede{font-size:20px;line-height:30px;margin:20px 0 28px;max-width:640px}
+.hero .sub{font-size:15px;line-height:22px;margin:14px 0 0}
+.hero .art{width:100%;height:auto;aspect-ratio:640/440;display:block}
+
+/* page layout: sibling services menu + content */
+.layout{max-width:1100px;margin:0 auto;padding:36px 37px 20px}
+.content{min-width:0}
+
+/* previous / next */
+.pn{display:flex;justify-content:space-between;padding:22px 47px;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:18px}
+.pn a{text-decoration:none}
+.pn a:hover{color:var(--orange)}
+
+/* quick table of contents */
+.toc{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 6px}
+.toc a{border:2px solid var(--orange);color:var(--orange);border-radius:50px;padding:8px 18px;text-decoration:none;font-family:"Gilroy-Bold",Arial,sans-serif;text-transform:uppercase;font-size:13px;line-height:1}
+.toc a:hover{background:var(--orange);color:#fff}
+
+section.blk{padding:38px 0 8px}
+section.blk h2{font-size:34px;line-height:42px;color:var(--navy)}
+section.blk>p.intro{margin:12px 0 22px;max-width:860px}
+section.blk>p.intro:empty{margin:6px 0 0}
+.cards{display:grid;gap:18px}
+.cards.c3{grid-template-columns:repeat(3,1fr)}
+.cards.c2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border-top:6px solid var(--orange);box-shadow:0 6px 18px rgba(0,0,0,.14);padding:20px 20px 24px}
+.card h3{font-size:22px;line-height:28px;color:var(--navy);margin-bottom:8px}
+.card p{margin:0;font-size:16.5px;line-height:25px}
+.card .tag{display:inline-block;margin-top:12px;background:var(--amber);color:#111;font-size:12.5px;line-height:1;padding:6px 12px;border-radius:50px}
+.card.ai{border-top-color:var(--teal)}
+.svc .card{display:flex;flex-direction:column}
+.svc ul{margin:0;padding-left:18px;font-size:16px;line-height:24px}
+.svc li{margin:0 0 9px}
+.svc li strong{font-family:"Gilroy-Bold",Arial,sans-serif;color:var(--navy)}
+.svc .tag{align-self:flex-start;margin-top:auto}
+.depth{margin-top:20px}
+.depth .h{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin:0 0 8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips span{background:var(--grey);border-radius:50px;padding:7px 14px;font-size:14.5px;line-height:20px}
+
+/* approach */
+.approach{background:var(--peach);padding:36px 30px 34px;margin-top:34px}
+.approach h2{font-size:34px;line-height:42px;color:var(--navy)}
+.approach .big{margin:12px 0 22px;max-width:900px;font-size:19px;line-height:29px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:#fff;padding:18px 18px 20px;box-shadow:0 6px 16px rgba(0,0,0,.14)}
+.step .n{display:inline-block;background:var(--orange);color:#fff;font-family:"Gilroy-Bold",Arial,sans-serif;border-radius:50px;padding:3px 14px;font-size:15px;line-height:22px}
+.step h3{font-size:21px;line-height:27px;margin:10px 0 6px}
+.step p{margin:0;font-size:15.5px;line-height:23px}
+.approach .note{margin:18px 0 0;font-size:15.5px}
+
+/* value */
+.value{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.value article{border-left:6px solid var(--orange);background:var(--grey);padding:16px 18px 18px}
+.value h3{font-size:21px;line-height:27px;margin-bottom:6px}
+.value p{margin:0;font-size:16px;line-height:24px}
+
+/* FAQ */
+.faq details{border-top:1px solid #d8d8d8;padding:4px 0}
+.faq details:last-of-type{border-bottom:1px solid #d8d8d8}
+.faq summary{cursor:pointer;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:20px;line-height:28px;padding:14px 40px 14px 0;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:8px;color:var(--orange);font-size:30px;line-height:36px}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0 0 16px;max-width:860px}
+
+
+/* service blocks: same pattern as the other product pages */
+.whathead{max-width:1366px;margin:30px auto 0;padding:10px 37px 26px}
+.whathead h2{font-size:38px;line-height:46px;color:var(--navy)}
+.whathead p{margin:10px 0 0;max-width:900px}
+.band{padding:40px 37px}
+.band.peach{background:var(--peach)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1366px;margin:0 auto}
+.sc{background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.22);padding:24px 22px 28px}
+.sc .eyebrow{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:13px;line-height:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin:0 0 8px}
+.sc h2{font-size:28px;line-height:35px;margin-bottom:14px;color:var(--ink)}
+.sc p{margin:0}
+.sc p.inc{margin-top:14px;font-size:15.5px;line-height:23px;color:#444}
+.sc p.inc strong{font-family:"Gilroy-Bold",Arial,sans-serif;color:var(--orange)}
+.sc .tag{display:inline-block;margin-top:14px;background:var(--amber);color:#111;font-size:12.5px;line-height:1;padding:6px 12px;border-radius:50px}
+.gfx{position:relative;background:var(--grey);padding:70px 18px 18px;min-height:420px;display:flex;align-items:center}
+.gfx svg{width:100%;height:auto;display:block}
+.gfx text{font-family:"Gilroy-Medium",Arial,sans-serif;fill:var(--ink)}
+.gfx .b{font-family:"Gilroy-Bold",Arial,sans-serif}
+.gfx .w{fill:#fff}
+.pill{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:"Gilroy-Medium",Arial,sans-serif;font-size:28px;line-height:38px;padding:6px 48px;border-radius:0 0 28px 28px;white-space:nowrap}
+.row.flip .sc{order:2}
+.row.flip .gfx{order:1}
+.wrap{max-width:1100px;margin:0 auto;padding:10px 37px 0}
+@media (max-width:1100px){
+  .whathead{padding:10px 20px 20px}
+  .whathead h2{font-size:30px;line-height:38px}
+  .band{padding:28px 20px}
+  .row,.row.flip{grid-template-columns:1fr;gap:26px}
+  .row.flip .sc,.row.flip .gfx{order:0}
+  .pill{font-size:21px;padding:6px 24px;white-space:normal;text-align:center;width:90%}
+  .gfx{padding-top:82px;min-height:0}
+  .wrap{padding:10px 20px 0}
+}
+
+
+/* approach band (orange band with white cards, as the Generative AI tile) and toolkit cards */
+.approach{background:var(--orange);color:#fff;padding:60px 37px 56px;margin:40px 0 0}
+.approach .in{max-width:1100px;margin:0 auto}
+.approach h2{color:#fff}
+.approach .big{color:#fff;max-width:860px}
+/* ONE card spec for the whole page (the site's own tile card): white, soft shadow, 24/22/28 padding, 28/35 heading, 18/28 text, 14px amber badges */
+.sc,.step,.asset,.value article{background:#fff;color:var(--ink);box-shadow:0 8px 22px rgba(0,0,0,.22);padding:24px 22px 28px;border:0;border-radius:0}
+.sc h2,.step h3,.asset h3,.value article h3{font-family:"Gilroy-Bold",Poppins,Arial,sans-serif;font-size:28px;line-height:35px;color:var(--ink);margin:0 0 14px}
+.sc p,.step p,.asset p,.value article p{margin:0;font-size:18px;line-height:28px}
+.sc .tag,.step .tag,.asset .used span{display:inline-block;background:var(--amber);color:#111;font-size:14px;line-height:1;padding:7px 14px;border-radius:50px}
+.step .tag{margin-top:14px}
+.approach .steps{grid-template-columns:repeat(2,1fr);gap:24px}
+.own{list-style:none;margin:28px 0 0;padding:20px 0 0;border-top:2px solid rgba(255,255,255,.55);display:flex;gap:14px 40px;flex-wrap:wrap;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:18px;line-height:26px}
+.own li{display:flex;align-items:center;gap:10px}
+.own li::before{content:"\2713";display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#fff;color:var(--orange);font-size:15px;line-height:1}
+.value{gap:24px}
+@media (max-width:1100px){
+  .approach{padding:40px 20px}
+  .approach .steps{grid-template-columns:1fr}
+}
+
+.act{margin-top:20px}
+
+/* next best action */
+.cta{background:var(--peach);color:var(--ink);text-align:center;padding:56px 37px;margin-top:0}
+.cta h2{font-size:38px;line-height:48px;color:var(--navy)}
+.cta p{max-width:720px;margin:12px auto 26px}
+
+/* footer */
+.ftr{border-top:1px solid #e3e3e3;padding:34px 47px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;font-size:16px}
+.ftr nav{display:flex;gap:30px;flex-wrap:wrap}
+.ftr a{text-decoration:none}
+.ftr .push{flex:1}
+.ftr .soc{display:flex;gap:14px}
+.ftr .soc img{width:26px;height:26px;display:block}
+.ftr .legal{width:100%;display:flex;gap:30px;flex-wrap:wrap;font-size:14px;color:#555}
+
+@media (max-width:1100px){
+  .hdr{height:auto;padding:16px 20px;flex-wrap:wrap;gap:14px}
+  .nav{gap:18px;flex-wrap:wrap;margin:0}
+  .nav .dd{padding:0;margin:0}
+  .nav .menu{min-width:0;width:calc(100vw - 40px)}
+  .hero{padding:26px 20px 28px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .hero h1{font-size:36px;line-height:44px}
+  .layout{grid-template-columns:1fr;padding:24px 20px}
+          .cards.c3,.cards.c2,.steps,.value{grid-template-columns:1fr}
+  section.blk h2,.approach h2{font-size:28px;line-height:36px}
+}
+
+/* sub-pages: previous / next strip, deliverables band, tile buttons */
+.pn{border-bottom:1px solid #e3e3e3}
+.pn .mid{font-family:"Gilroy-Medium",Arial,sans-serif;font-size:15px;color:#555}
+.deliver{padding:52px 37px 56px}
+.deliver .in{max-width:1366px;margin:0 auto}
+.deliver h2{font-size:38px;line-height:46px;color:var(--navy)}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
+.act{margin-top:20px}
+@media (max-width:1100px){
+  .deliver{padding:36px 20px}
+  .deliver h2{font-size:30px;line-height:38px}
+  .dgrid{grid-template-columns:1fr}
+  .pn{padding:18px 20px;font-size:16px;flex-wrap:wrap;gap:8px 24px}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <a class="logo" href="https://xponent.ai/"><img src="assets/img/logo.png" alt="xponent.ai"></a>
+  <nav class="nav" aria-label="Main">
+    <div class="dd">
+      <a class="on" href="https://xponent.ai/product/" aria-haspopup="true">Capabilities<span class="caret">&#9660;</span></a>
+      <ul class="menu" aria-label="Capabilities">
+        <li><a href="https://xponent.ai/product/">Data strategy and AI advisory services</a></li>
+        <li><a href="https://xponent.ai/product/">Databricks data engineering services</a></li>
+        <li><a href="https://xponent.ai/product/">Databricks Genie &amp; Agentic AI solutions</a></li>
+        <li><a class="cur" aria-current="page" href="index.html">Customer Data Platform (CDP) transformation</a></li>
+        <li><a href="https://xponent.ai/product/">SAP-Databricks solution engineering</a></li>
+        <li><a href="https://xponent.ai/product/">Data platform modernization</a></li>
+        <li><a href="https://xponent.ai/product/">Data migration services</a></li>
+        <li><a href="https://xponent.ai/product/">Data &amp; AI governance solutions</a></li>
+        <li><a href="https://xponent.ai/product/">Data &amp; AI cost management &amp; optimization</a></li>
+        <li><a href="https://xponent.ai/product/">Databricks managed services</a></li>
+      </ul>
+    </div>
+    <a href="https://xponent.ai/retail/">Industries &amp; Use Cases<span class="caret">&#9660;</span></a>
+    <a href="https://xponent.ai/engagement-models/">Engagement Models<span class="caret">&#9660;</span></a>
+    <a href="https://xponent.ai/about/">About Us</a>
+    <a href="https://xponent.ai/career/">Career</a>
+  </nav>
+  <span class="push"></span>
+  <a class="btn solid" href="https://xponent.ai/resources-library/">Resources</a>
+  <a class="btn line" href="https://xponent.ai/contact-us/">Contact us</a>
+  <span class="search" aria-hidden="true">&#9906;</span>
+</header>
+
+<main id="main">
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-grid">
+    <div>
+      <p class="kicker">CDP Transformation</p>
+      <h1 id="h1">AI Customer Intelligence</h1>
+      <p class="lede">Customer measures defined once, answers that match across every report, and an agentic AI workspace where agents propose and people approve.</p>
+      <a class="btn white big" href="https://xponent.ai/contact-us/">Write to us for a quick CDP health checkup</a>
+    </div>
+    <svg class="art" viewBox="0 0 640 440" role="img" aria-label="AI Customer Intelligence: Definitions, Answers, Agent workspace"><rect width="640" height="440" fill="#0A8F88"/><circle cx="320" cy="230" r="205" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/><circle cx="320" cy="230" r="140" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 8"/><g stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-dasharray="3 7" fill="none"><path d="M320 230 L320 82"/><path d="M320 230 L500 330"/><path d="M320 230 L140 330"/></g><g font-family="Gilroy-Bold,Arial,sans-serif" font-size="17" text-anchor="middle"><rect x="245" y="60" width="150" height="44" rx="22" fill="#fff"/><text x="320" y="88" fill="#FF672E">Definitions</text><rect x="425" y="308" width="150" height="44" rx="22" fill="#fff"/><text x="500" y="336" fill="#FF672E">Answers</text><rect x="65" y="308" width="150" height="44" rx="22" fill="#fff"/><text x="140" y="336" fill="#FF672E">Agent workspace</text></g><circle cx="320" cy="230" r="82" fill="#FFAA05"/><circle cx="320" cy="230" r="68" fill="#FF672E"/><text x="320" y="225" text-anchor="middle" font-family="Gilroy-Bold,Arial,sans-serif" font-size="18" fill="#fff">AI Customer</text><text x="320" y="247" text-anchor="middle" font-family="Gilroy-Bold,Arial,sans-serif" font-size="18" fill="#fff">Intelligence</text></svg>
+  </div>
+</section>
+
+<nav class="pn" aria-label="Previous and next service"><a href="customer-foundation.html">&larr; Previous: Customer Foundation</a><a href="audience-activation.html">Next: Audience Activation &rarr;</a></nav>
+<section class="band peach" aria-labelledby="s1"><div class="row">
+  <div class="sc"><h2 id="s1">Shared Metric Definitions: Each Measure Defined Once</h2>
+    <p>Shared Metric Definitions record every customer measure in one register: active customer, lapsing customer, lifetime value and the rest. Each entry states its formula, its source tables, its owner and the date it was approved. Reports, audiences and AI tools read from the register, so two teams asking the same question receive the same number.</p></div>
+  <div class="gfx"><div class="pill">Metric Definitions</div>
+    <svg viewBox="0 0 600 340" role="img" aria-label="A metric register where each measure has a formula and owner, read by reports, audiences and the AI workspace"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FF672E"/></marker></defs><rect x="20" y="20" width="300" height="230" rx="12" fill="#fff" stroke="#FF672E" stroke-width="2"/><rect x="20" y="20" width="300" height="38" rx="12" fill="#FF672E"/><text class="b w" x="170.0" y="44.25" font-size="15" text-anchor="middle">METRIC REGISTER</text><text class="b" x="40" y="84" font-size="13" text-anchor="start">Measure</text><text class="b" x="150" y="84" font-size="13" text-anchor="start">Formula</text><text class="b" x="250" y="84" font-size="13" text-anchor="start">Owner</text><text x="40" y="120" font-size="13" text-anchor="start">Active customer</text><rect x="150" y="110" width="64" height="8" fill="#E3E3E3"/><rect x="244" y="102" width="64" height="26" rx="13" fill="#FFAA05"/><text x="276.0" y="119.2" font-size="12" text-anchor="middle">Owner</text><text x="40" y="170" font-size="13" text-anchor="start">Lapsing customer</text><rect x="150" y="160" width="64" height="8" fill="#E3E3E3"/><rect x="244" y="152" width="64" height="26" rx="13" fill="#FFAA05"/><text x="276.0" y="169.2" font-size="12" text-anchor="middle">Owner</text><text x="40" y="220" font-size="13" text-anchor="start">Lifetime value</text><rect x="150" y="210" width="64" height="8" fill="#E3E3E3"/><rect x="244" y="202" width="64" height="26" rx="13" fill="#FFAA05"/><text x="276.0" y="219.2" font-size="12" text-anchor="middle">Owner</text><path d="M320 135 L420 64" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="422" y="40" width="160" height="48" rx="8" fill="#FFAA05"/><text x="502.0" y="69.25" font-size="15" text-anchor="middle">Reports</text><path d="M320 135 L420 134" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="422" y="110" width="160" height="48" rx="8" fill="#FFAA05"/><text x="502.0" y="139.25" font-size="15" text-anchor="middle">Audiences</text><path d="M320 135 L420 204" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="422" y="180" width="160" height="48" rx="8" fill="#FFAA05"/><text x="502.0" y="209.25" font-size="15" text-anchor="middle">AI workspace</text><rect x="20" y="276" width="560" height="46" rx="23" fill="#FF672E"/><text class="b w" x="300.0" y="304.95" font-size="17" text-anchor="middle">ONE DEFINITION, EVERY TOOL</text></svg>
+  </div>
+</div></section>
+
+<section class="band" aria-labelledby="s2"><div class="row flip">
+  <div class="sc"><h2 id="s2">Natural-Language Answers: Plain Questions, Governed Results</h2>
+    <p>Natural-Language Answers let marketers ask questions in plain English against the governed definitions. Before launch, a benchmark set of questions with known answers tests the assistant, and every wrong result is traced to a definition or a data fault. Each answer shows the definition and the data it came from.</p></div>
+  <div class="gfx"><div class="pill">Natural-Language Answers</div>
+    <svg viewBox="0 0 600 340" role="img" aria-label="A plain-English question is answered from a governed definition and the assistant is tested against known answers before launch"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FF672E"/></marker></defs><rect x="14" y="30" width="170" height="88" rx="8" fill="#fff" stroke="#FF672E" stroke-width="2"/><text x="99.0" y="79.25" font-size="15" text-anchor="middle">Plain-English question</text><path d="M184 74 L222 74" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="224" y="30" width="160" height="88" rx="8" fill="#FFAA05"/><text x="304.0" y="79.25" font-size="15" text-anchor="middle">Governed definition</text><path d="M384 74 L422 74" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="424" y="30" width="162" height="88" rx="8" fill="#fff" stroke="#FF672E" stroke-width="2"/><text class="b" x="505" y="62" font-size="15" text-anchor="middle">Answer</text><text x="505" y="84" font-size="13" text-anchor="middle">with its definition</text><text x="505" y="102" font-size="13" text-anchor="middle">and data source</text><rect x="14" y="160" width="572" height="150" rx="12" fill="none" stroke="#111" stroke-width="3"/><text class="b" x="300" y="190" font-size="15" text-anchor="middle">BENCHMARK BEFORE LAUNCH</text><rect x="34" y="212" width="170" height="40" rx="8" fill="#FFAA05"/><text x="119.0" y="236.9" font-size="14" text-anchor="middle">Known answers</text><rect x="220" y="212" width="170" height="40" rx="8" fill="#FFAA05"/><text x="305.0" y="236.9" font-size="14" text-anchor="middle">Assistant tested</text><rect x="406" y="212" width="170" height="40" rx="8" fill="#FFAA05"/><text x="491.0" y="236.9" font-size="14" text-anchor="middle">Each miss traced</text><text x="300" y="288" font-size="13" text-anchor="middle">a wrong result is traced to a definition or a data fault</text></svg>
+  </div>
+</div></section>
+
+<section class="band peach" aria-labelledby="s3"><div class="row">
+  <div class="sc"><h2 id="s3">Agentic AI Workspace: Agents Propose, People Approve</h2>
+    <p>The agentic AI workspace gives each agent a defined job, such as drafting an audience or flagging customers likely to lapse. An agent can read only the fields its task needs. Agents propose actions, a named person approves them, and every step is written to an audit log.</p><span class="tag">Ask and build now &middot; proposing agents next</span></div>
+  <div class="gfx"><div class="pill">Agentic AI Workspace</div>
+    <svg viewBox="0 0 600 340" role="img" aria-label="An agent produces a proposal, a person approves it and the action runs, with every step in an audit log"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FF672E"/></marker></defs><text x="300" y="24" font-size="14" text-anchor="middle">Each agent reads only the fields its task needs</text><circle cx="76" cy="120" r="50" fill="#FF672E"/><text class="b w" x="76" y="126" font-size="17" text-anchor="middle">Agent</text><path d="M126 120 L168 120" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="170" y="90" width="110" height="60" rx="8" fill="#fff" stroke="#FF672E" stroke-width="2"/><text class="b" x="225.0" y="125.6" font-size="16" text-anchor="middle">Proposal</text><path d="M280 120 L316 120" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="318" y="90" width="150" height="60" rx="8" fill="#FFAA05"/><text class="b" x="393.0" y="125.25" font-size="15" text-anchor="middle">Person approves</text><path d="M468 120 L504 120" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="506" y="90" width="80" height="60" rx="8" fill="#fff" stroke="#FF672E" stroke-width="2"/><text class="b" x="546.0" y="125.6" font-size="16" text-anchor="middle">Action</text><path d="M76 170 V204 M225 150 V204 M393 150 V204 M546 150 V204" stroke="#111" stroke-width="2" stroke-dasharray="4 4"/><rect x="20" y="204" width="560" height="46" rx="23" fill="#FF672E"/><text class="b w" x="300.0" y="232.6" font-size="16" text-anchor="middle">AUDIT LOG: EVERY STEP RECORDED</text><rect x="20" y="274" width="260" height="40" rx="8" fill="#fff" stroke="#FF672E" stroke-width="2" stroke-dasharray="6 5"/><text x="150.0" y="298.9" font-size="14" text-anchor="middle">Draft an audience</text><rect x="320" y="274" width="260" height="40" rx="8" fill="#fff" stroke="#FF672E" stroke-width="2" stroke-dasharray="6 5"/><text x="450.0" y="298.9" font-size="14" text-anchor="middle">Flag customers likely to lapse</text></svg>
+  </div>
+</div></section>
+
+<section class="deliver" aria-labelledby="dh"><div class="in">
+  <h2 id="dh">What you receive</h2>
+  <div class="dgrid">
+    <article class="asset"><h3>Metric register</h3><p>Every customer measure with formula, owner and approval date.</p></article>
+    <article class="asset"><h3>Benchmark question set</h3><p>Questions with known answers, used to test the assistant before launch.</p></article>
+    <article class="asset"><h3>Agent permissions and audit log</h3><p>The fields each agent may read, and a record of every step.</p></article>
+  </div>
+</div></section>
+
+<section class="cta" aria-labelledby="ctah">
+  <h2 id="ctah">Write to us for a quick CDP health checkup</h2>
+  <p>Tell us where your customer data is today. We will tell you what to fix first.</p>
+  <a class="btn solid big" href="https://xponent.ai/contact-us/">Write to us</a>
+</section>
+</main>
+
+<footer class="ftr">
+  <nav aria-label="Footer">
+    <a href="https://xponent.ai/product/">Services</a><a href="https://xponent.ai/engagement-models/">Engagement Models</a><a href="https://xponent.ai/about/">About Us</a><a href="https://xponent.ai/career/">Career</a><a href="https://xponent.ai/resources-library/">Resources</a>
+  </nav>
+  <span class="push"></span>
+  <div class="soc">
+    <a href="https://www.facebook.com/profile.php?id=61556573188140" aria-label="Facebook"><img src="assets/img/ic-facebook.png" alt=""></a>
+    <a href="https://www.linkedin.com/company/xponent-ai/" aria-label="LinkedIn"><img src="assets/img/ic-linkedin.png" alt=""></a>
+    <a href="https://twitter.com/xponent_ai" aria-label="X"><img src="assets/img/ic-twitter.png" alt=""></a>
+    <a href="https://youtube.com" aria-label="YouTube"><img src="assets/img/ic-youtube.png" alt=""></a>
+  </div>
+  <div class="legal"><span>2026 <a href="https://xponent.ai/">xponent.ai</a> All rights reserved.</span><a href="https://xponent.ai/privacy/">Privacy Policy</a><a href="https://xponent.ai/terms-of-use/">Terms Of Use</a></div>
+</footer>
+</body>
+</html>
