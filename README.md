@@ -2,9 +2,8 @@
 
 Static preview of the Customer Data Platform (CDP) transformation capability page and its Capabilities overview tile, for internal review.
 
-- `index.html`: landing page with links to the two pages
-- `product/customer-data-platform/index.html`: the service page
-- `capabilities-overview-tile.html`: the overview tile
+- `index.html`: the service page (this is what opens at the site address)
+- `capabilities-overview-tile.html`: the card that goes on the Capabilities overview page
 - `assets/`: fonts and images used by the pages
 - `.nojekyll`: tells GitHub Pages to serve the files as they are (no Jekyll build)
 - `robots.txt` and a noindex tag on every page: asks search engines not to list it. This does not make the site private.
