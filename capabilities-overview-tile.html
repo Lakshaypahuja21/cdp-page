@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Customer Data Platform (CDP) Transformation | AI &amp; Customer Intelligence – xponent.ai</title>
 <meta name="description" content="AI and customer intelligence on a trusted customer data platform. One customer record, governed definitions, audience activation and an agentic AI workspace for marketing.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do we need a new CDP?", "acceptedAnswer": {"@type": "Answer", "text": "Often not. If you already run a CDP or hold customer data in a warehouse, the gap is usually identity, definitions and delivery. We help you choose if you are starting fresh."}}, {"@type": "Question", "name": "Should we build on our warehouse, use a CDP product, or both?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on what you need in real time, who owns the data and what it costs to run. Many teams do both. We are neutral on the product."}}, {"@type": "Question", "name": "Is an agentic AI workspace safe for marketers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when it reads governed definitions, is tested against questions with known answers, has agreed usage limits, and a person approves anything that is sent. Agents propose; people decide."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your sources and how clean your identifiers are, so we confirm timing at scoping. We need read-only data access, a business owner and one use case."}}]}</script>
 <style>
 /* Theme tokens measured from xponent.ai. Fonts are the site's own Gilroy files. */
 @font-face{font-family:"Gilroy-Bold";src:url("assets/fonts/Gilroy-Bold.ttf") format("truetype");font-weight:700}
@@ -171,25 +170,15 @@ section.blk>p.intro:empty{margin:6px 0 0}
 .own{list-style:none;margin:28px 0 0;padding:20px 0 0;border-top:2px solid rgba(255,255,255,.55);display:flex;gap:14px 40px;flex-wrap:wrap;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:18px;line-height:26px}
 .own li{display:flex;align-items:center;gap:10px}
 .own li::before{content:"\2713";display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#fff;color:var(--orange);font-size:15px;line-height:1}
-.assets{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
-.asset{grid-column:span 2}
-.asset:nth-child(4){grid-column:2 / span 2}
-.asset:nth-child(5){grid-column:4 / span 2}
-.asset .ico{display:flex;width:56px;height:56px;background:var(--peach);align-items:center;justify-content:center;border-radius:12px;margin-bottom:16px}
-.asset .ico svg{width:30px;height:30px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.asset .used{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.asset .used::before{content:"Used in";font-size:14px;line-height:1;color:#555;margin-right:2px}
 .value{gap:24px}
 @media (max-width:1100px){
   .approach{padding:40px 20px}
   .approach .steps{grid-template-columns:1fr}
-  .assets{grid-template-columns:1fr}
-  .asset,.asset:nth-child(4),.asset:nth-child(5){grid-column:auto}
 }
 
 /* next best action */
-.cta{background:var(--orange);color:#fff;text-align:center;padding:56px 37px;margin-top:40px}
-.cta h2{font-size:38px;line-height:48px;color:#fff}
+.cta{background:var(--peach);color:var(--ink);text-align:center;padding:56px 37px;margin-top:0}
+.cta h2{font-size:38px;line-height:48px;color:var(--navy)}
 .cta p{max-width:720px;margin:12px auto 26px}
 
 /* footer */
@@ -389,50 +378,11 @@ section.blk>p.intro:empty{margin:6px 0 0}
   <ul class="own" aria-label="What you keep"><li>Documented</li><li>Handed over</li><li>Yours to explain</li></ul>
 </div></section>
 
-<div class="wrap">
-
-    <!-- 4. Accelerators / tools / IP / frameworks -->
-    <section class="blk" id="accelerators" aria-labelledby="acch">
-      <h2 id="acch">What we bring</h2>
-      <p class="intro">Ready-made assets, so you start ahead.</p>
-      <div class="assets">
-    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Identity Health Audit</h3><p>A repeatable check of duplicates, shared identifiers and match quality.</p><p class="used"><span>Customer Foundation</span><span>CDP Health Checkup</span></p></article>
-    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M8 8h7M8 12h7"/></svg></span><h3>Customer Metric Register</h3><p>Every customer measure defined once, in plain language, and kept in one place.</p><p class="used"><span>AI Customer Intelligence</span></p></article>
-    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3"/><path d="M20 16H7l3 3"/></svg></span><h3>Change-only Delivery Pattern</h3><p>A tested way to load once, then send only what changed.</p><p class="used"><span>Audience Activation</span></p></article>
-    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7"/><path d="M12 17h.01"/></svg></span><h3>Benchmark Question Set</h3><p>Questions with known answers, used to test your AI assistant before launch.</p><p class="used"><span>AI Customer Intelligence</span></p></article>
-    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="5" width="12" height="16" rx="2"/><path d="M9 5h6v2H9z"/><path d="M9 14l2 2 4-4"/></svg></span><h3>CDP Health Checkup Framework</h3><p>A 28-point maturity review with evidence behind every finding.</p><p class="used"><span>CDP Health Checkup</span></p></article>
-      </div>
-    </section>
-
-    <!-- 5. Snippets of value delivered / success stories with case-study link: not yet cleared, left out on purpose -->
-
-    <!-- Value for the finance / purchase reader -->
-    <section class="blk" id="value" aria-labelledby="valh">
-      <h2 id="valh">What it means for the business</h2>
-      <p class="intro"></p>
-      <div class="value">
-        <article><h3>Less rework</h3><p>Define once and reuse everywhere, instead of rebuilding for every campaign.</p></article>
-        <article><h3>Less waste</h3><p>Know who you can reach, so spend goes to customers you can actually contact.</p></article>
-        <article><h3>Predictable cost</h3><p>Prove one audience first, then scale, with run costs tracked.</p></article>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="blk faq" id="faq" aria-labelledby="faqh">
-      <h2 id="faqh">Questions we are asked</h2>
-      <p class="intro"></p>
-      <details><summary>Do we need a new CDP?</summary><p>Often not. If you already run a CDP or hold customer data in a warehouse, the gap is usually identity, definitions and delivery. We help you choose if you are starting fresh.</p></details>
-      <details><summary>Should we build on our warehouse, use a CDP product, or both?</summary><p>It depends on what you need in real time, who owns the data and what it costs to run. Many teams do both. We are neutral on the product.</p></details>
-      <details><summary>Is an agentic AI workspace safe for marketers?</summary><p>Yes, when it reads governed definitions, is tested against questions with known answers, has agreed usage limits, and a person approves anything that is sent. Agents propose; people decide.</p></details>
-      <details><summary>How long does it take?</summary><p>It depends on your sources and how clean your identifiers are, so we confirm timing at scoping. We need read-only data access, a business owner and one use case.</p></details>
-    </section>
-</div>
-
 <!-- Next best action -->
 <section class="cta" aria-labelledby="ctah">
   <h2 id="ctah">Write to us for a quick CDP health checkup</h2>
   <p>Tell us where your customer data is today. We will tell you what to fix first.</p>
-  <a class="btn white big" href="https://xponent.ai/contact-us/">Write to us</a>
+  <a class="btn solid big" href="https://xponent.ai/contact-us/">Write to us</a>
 </section>
 </main>
 
