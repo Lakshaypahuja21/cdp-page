@@ -155,6 +155,38 @@ section.blk>p.intro:empty{margin:6px 0 0}
   .wrap{padding:10px 20px 0}
 }
 
+
+/* approach band (orange band with white cards, as the Generative AI tile) and toolkit cards */
+.approach{background:var(--orange);color:#fff;padding:60px 37px 56px;margin:40px 0 0}
+.approach .in{max-width:1100px;margin:0 auto}
+.approach h2{color:#fff}
+.approach .big{color:#fff;max-width:860px}
+/* ONE card spec for the whole page (the site's own tile card): white, soft shadow, 24/22/28 padding, 28/35 heading, 18/28 text, 14px amber badges */
+.sc,.step,.asset,.value article{background:#fff;color:var(--ink);box-shadow:0 8px 22px rgba(0,0,0,.22);padding:24px 22px 28px;border:0;border-radius:0}
+.sc h2,.step h3,.asset h3,.value article h3{font-family:"Gilroy-Bold",Poppins,Arial,sans-serif;font-size:28px;line-height:35px;color:var(--ink);margin:0 0 14px}
+.sc p,.step p,.asset p,.value article p{margin:0;font-size:18px;line-height:28px}
+.sc .tag,.step .tag,.asset .used span{display:inline-block;background:var(--amber);color:#111;font-size:14px;line-height:1;padding:7px 14px;border-radius:50px}
+.step .tag{margin-top:14px}
+.approach .steps{grid-template-columns:repeat(2,1fr);gap:24px}
+.own{list-style:none;margin:28px 0 0;padding:20px 0 0;border-top:2px solid rgba(255,255,255,.55);display:flex;gap:14px 40px;flex-wrap:wrap;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:18px;line-height:26px}
+.own li{display:flex;align-items:center;gap:10px}
+.own li::before{content:"\2713";display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#fff;color:var(--orange);font-size:15px;line-height:1}
+.assets{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
+.asset{grid-column:span 2}
+.asset:nth-child(4){grid-column:2 / span 2}
+.asset:nth-child(5){grid-column:4 / span 2}
+.asset .ico{display:flex;width:56px;height:56px;background:var(--peach);align-items:center;justify-content:center;border-radius:12px;margin-bottom:16px}
+.asset .ico svg{width:30px;height:30px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.asset .used{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.asset .used::before{content:"Used in";font-size:14px;line-height:1;color:#555;margin-right:2px}
+.value{gap:24px}
+@media (max-width:1100px){
+  .approach{padding:40px 20px}
+  .approach .steps{grid-template-columns:1fr}
+  .assets{grid-template-columns:1fr}
+  .asset,.asset:nth-child(4),.asset:nth-child(5){grid-column:auto}
+}
+
 /* next best action */
 .cta{background:var(--orange);color:#fff;text-align:center;padding:56px 37px;margin-top:40px}
 .cta h2{font-size:38px;line-height:48px;color:#fff}
@@ -345,30 +377,30 @@ section.blk>p.intro:empty{margin:6px 0 0}
   </div>
 </div></section>
 
+<section class="approach" id="approach" aria-labelledby="apph"><div class="in">
+  <h2 id="apph">Trust before AI</h2>
+  <p class="big">Our approach puts the foundation before the AI. We first settle who the customer is, what each measure means and how data reaches your tools, so the agentic AI workspace works from the same trusted definitions.</p>
+  <div class="steps">
+    <div class="step"><span class="n">01</span><h3>Diagnose</h3><p>A read-only health checkup of your CDP and warehouse.</p><span class="tag">2&ndash;3 weeks</span></div>
+    <div class="step"><span class="n">02</span><h3>Foundation</h3><p>Identity and shared definitions, agreed and written down.</p></div>
+    <div class="step"><span class="n">03</span><h3>Activate</h3><p>One audience live, so you see the whole path work before you scale.</p><span class="tag">In weeks</span></div>
+    <div class="step"><span class="n">04</span><h3>AI workspace</h3><p>Marketers ask, build and review suggestions, with limits and approvals agreed up front.</p></div>
+  </div>
+  <ul class="own" aria-label="What you keep"><li>Documented</li><li>Handed over</li><li>Yours to explain</li></ul>
+</div></section>
+
 <div class="wrap">
-    <!-- 3. Approach: what is special -->
-    <section class="approach" id="approach" aria-labelledby="apph">
-      <h2 id="apph">Trust before AI</h2>
-      <p class="big">Our approach puts the foundation before the AI. We first settle who the customer is, what each measure means and how data reaches your tools, so the agentic AI workspace works from the same trusted definitions. Everything is documented and handed over, so you own it.</p>
-      <div class="steps">
-        <div class="step"><span class="n">01</span><h3>Diagnose</h3><p>A read-only health checkup, in two to three weeks.</p></div>
-        <div class="step"><span class="n">02</span><h3>Foundation</h3><p>Identity and shared definitions, agreed and written down.</p></div>
-        <div class="step"><span class="n">03</span><h3>Activate</h3><p>One audience live in weeks, so you see the whole path work.</p></div>
-        <div class="step"><span class="n">04</span><h3>AI workspace</h3><p>Marketers ask, build and review suggestions, with limits and approvals agreed up front.</p></div>
-      </div>
-      <p class="note">Vendor-neutral: we work with the CDP and warehouse you run.</p>
-    </section>
 
     <!-- 4. Accelerators / tools / IP / frameworks -->
     <section class="blk" id="accelerators" aria-labelledby="acch">
       <h2 id="acch">What we bring</h2>
       <p class="intro">Ready-made assets, so you start ahead.</p>
-      <div class="cards c3">
-        <div class="card"><h3>Identity Health Audit</h3><p>A repeatable check of duplicates, shared identifiers and match quality.</p></div>
-        <div class="card"><h3>Customer Metric Register</h3><p>Every customer measure defined once, in plain language.</p></div>
-        <div class="card"><h3>Change-only Delivery Pattern</h3><p>A tested way to load once, then send only what changed.</p></div>
-        <div class="card"><h3>Benchmark Question Set</h3><p>Questions with known answers to test your AI assistant before launch.</p></div>
-        <div class="card"><h3>CDP Health Checkup Framework</h3><p>A 28-point maturity review, with evidence for every finding.</p></div>
+      <div class="assets">
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Identity Health Audit</h3><p>A repeatable check of duplicates, shared identifiers and match quality.</p><p class="used"><span>Customer Foundation</span><span>CDP Health Checkup</span></p></article>
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M8 8h7M8 12h7"/></svg></span><h3>Customer Metric Register</h3><p>Every customer measure defined once, in plain language, and kept in one place.</p><p class="used"><span>AI Customer Intelligence</span></p></article>
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3"/><path d="M20 16H7l3 3"/></svg></span><h3>Change-only Delivery Pattern</h3><p>A tested way to load once, then send only what changed.</p><p class="used"><span>Audience Activation</span></p></article>
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7"/><path d="M12 17h.01"/></svg></span><h3>Benchmark Question Set</h3><p>Questions with known answers, used to test your AI assistant before launch.</p><p class="used"><span>AI Customer Intelligence</span></p></article>
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="5" width="12" height="16" rx="2"/><path d="M9 5h6v2H9z"/><path d="M9 14l2 2 4-4"/></svg></span><h3>CDP Health Checkup Framework</h3><p>A 28-point maturity review with evidence behind every finding.</p><p class="used"><span>CDP Health Checkup</span></p></article>
       </div>
     </section>
 
