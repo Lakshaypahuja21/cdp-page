@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capabilities overview: CDP tile (review copy) – xponent.ai</title>
+<style>
+/* Review copy of the tile that goes on the Capabilities overview page (/product/). Same pattern as the other nine tiles: coloured band, white card with heading, short paragraph and Explore button, image on the other side. */
+@font-face{font-family:"Gilroy-Bold";src:url("assets/fonts/Gilroy-Bold.ttf") format("truetype");font-weight:700}
+@font-face{font-family:"Gilroy-Medium";src:url("assets/fonts/Gilroy-Medium.ttf") format("truetype");font-weight:500}
+:root{--orange:#FF672E;--teal:#00B2A9;--navy:#17173A;--ink:#1C1C1C}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Gilroy-Medium",Poppins,Arial,sans-serif;color:var(--ink);background:#fff;font-size:18px;line-height:28px}
+h1,h2{font-family:"Gilroy-Bold",Poppins,Arial,sans-serif;margin:0}
+a:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.note{background:#FFF4D6;border-bottom:1px solid #e6d9aa;padding:10px 37px;font-size:14.5px;line-height:22px}
+.note strong{font-family:"Gilroy-Bold",Arial,sans-serif}
+.hdr{height:96px;display:flex;align-items:center;gap:36px;padding:0 40px}
+.hdr img{width:100px;height:auto;display:block}
+.hdr .push{flex:1}
+.hdr span.nav{font-size:16px}
+.page-title{max-width:1366px;margin:30px auto 20px;padding:0 37px;font-size:56px;line-height:70px}
+.ctx{max-width:1366px;margin:0 auto;padding:0 37px 18px;font-size:15.5px;color:#555}
+.tile{background:var(--teal);padding:40px 37px}
+.tile .row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1366px;margin:0 auto}
+.tile .pic{order:1}
+.tile .pic img{display:block;width:100%;height:auto}
+.tile .card{order:2;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.25);padding:28px 26px 34px}
+.tile h2{font-size:28px;line-height:35px;margin-bottom:16px}
+.tile p{margin:0 0 22px}
+.btn{display:inline-block;text-decoration:none;background:var(--orange);color:#fff;font-family:"Gilroy-Bold",Arial,sans-serif;text-transform:uppercase;font-size:16px;line-height:1;padding:17px 26px;border-radius:50px}
+.btn:hover{background:#e5521b}
+.spec{max-width:1366px;margin:26px auto 50px;padding:0 37px;font-size:15.5px;line-height:24px}
+.spec h3{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:18px;margin:0 0 8px;color:var(--navy)}
+.spec li{margin:3px 0}
+@media (max-width:1000px){.tile .row{grid-template-columns:1fr}.tile .pic,.tile .card{order:0}.page-title{font-size:36px;line-height:44px}}
+</style>
+</head>
+<body>
+<div class="note"><strong>Review copy, not part of the site.</strong> This is the tile for the Capabilities overview page. The layout, heading style and button copy the other nine tiles. Paste the tile only (the coloured band) into the overview.</div>
+<header class="hdr"><img src="assets/img/logo.png" alt="xponent.ai"><span class="push"></span><span class="nav">Capabilities</span></header>
+
+<h1 class="page-title">Capabilities</h1>
+<p class="ctx">The tile sits fourth in the overview, following the team&rsquo;s service order. Even-numbered tiles have the image on the left and a coloured band behind.</p>
+
+<!-- ===== THE TILE ===== -->
+<section class="tile" id="pro-cdp-transformation" aria-labelledby="cdptile">
+  <div class="row">
+    <div class="pic"><img src="assets/img/cdp-tile.png" width="640" height="440" alt="Store, web, email, phone and app records joining into one customer record"></div>
+    <div class="card">
+      <h2 id="cdptile">Customer Data Platform (CDP) Transformation: AI Customer Intelligence You Can Trust</h2>
+      <p>One trusted customer record, governed definitions, audiences sent to every channel and an agentic AI workspace for marketing, built on the CDP and warehouse you already run.</p>
+      <a class="btn" href="product/customer-data-platform/">Explore</a>
+    </div>
+  </div>
+</section>
+<!-- ===== END TILE ===== -->
+
+<section class="spec" aria-label="Notes for the web team">
+  <h3>Notes for whoever adds it</h3>
+  <ul>
+    <li>Explore goes to <code>/product/customer-data-platform/</code> (in this review copy it opens the local page).</li>
+    <li>Anchor id <code>pro-cdp-transformation</code> follows the pattern of the other tiles (<code>pro-generative-ai-solution</code> and so on), so the Capabilities menu entry can link straight to it.</li>
+    <li>Image is <code>assets/img/cdp-tile.png</code>, 1280 by 880 (shown at 640 by 440). Upload it to the media library.</li>
+    <li>Band colour is teal, the same as the page hero. The other even tiles use their own colours; change it if the team prefers a different one.</li>
+  </ul>
+</section>
+</body>
+</html>
