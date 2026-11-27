@@ -201,34 +201,44 @@ section.blk>p.intro:empty{margin:6px 0 0}
   .asset,.asset:nth-child(4),.asset:nth-child(5){grid-column:auto}
 }
 
-/* what we deliver (ported from the team draft: same markup and icons, site colours, fonts and card spec) and review-call additions */
-.dlv{background:var(--grey);padding:52px 37px 56px;border-top:1px solid #e3e3e3}
+/* what we deliver: the team draft's design (six cards in a row with chevrons, rounded cards, rounded bar and strip); site colours and font */
+.dlv{background:var(--grey);padding:88px 37px;border-top:1px solid #e3e3e3}
 .dlv .in{max-width:1366px;margin:0 auto;display:flex;flex-direction:column;gap:30px}
-.dlv .eyebrow{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:13px;line-height:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin:0 0 8px}
-.dlv h2{font-size:38px;line-height:46px;color:var(--navy)}
-.dlv .lead{margin:10px 0 0;max-width:780px}
-.agbar{background:var(--navy);color:#fff;padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
-.agbar p{margin:0;font-size:17px;line-height:26px}
-.agbar b{font-family:"Gilroy-Bold",Arial,sans-serif}
+.dlv .head{display:flex;flex-direction:column;gap:12px;max-width:780px}
+.dlv .eyebrow{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:12px;line-height:18px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin:0}
+.dlv h2{font-size:36px;line-height:1.2;color:var(--navy);margin:0}
+.dlv .lead{margin:0;font-size:17px;line-height:1.6;color:#5b5f73}
+.agbar{background:var(--navy);color:#fff;padding:14px 20px;border-radius:14px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.agbar p{margin:0;font-size:14px;line-height:21px;color:#c7cbe0}
+.agbar p:first-of-type{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:15px;color:#fff}
+.agbar b{font-weight:400}
 .dico{width:46px;height:46px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;flex:none}
-.dico.soft{background:var(--peach)}
+.dico.soft{background:rgba(255,103,46,.1)}
 .agbar .dico{width:34px;height:34px}
-.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.dstep{background:#fff;color:var(--ink);box-shadow:0 8px 22px rgba(0,0,0,.22);padding:24px 22px 28px;display:flex;flex-direction:column;gap:12px}
-.dstep h3{font-family:"Gilroy-Bold",Poppins,Arial,sans-serif;font-size:28px;line-height:35px;color:var(--ink);margin:0}
-.dstep p{margin:0;font-size:18px;line-height:28px}
-.gov{border:2px dashed var(--navy);padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
-.gov p{margin:0;font-size:17px;line-height:26px}
-.gov b{font-family:"Gilroy-Bold",Arial,sans-serif;color:var(--navy)}
+.flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:30px}
+.dstep{position:relative;background:#fff;border:1px solid #e3e3e3;border-radius:16px;padding:22px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 20px rgba(23,23,58,.06);color:var(--ink)}
+.dstep h3{font-family:"Gilroy-Bold",Poppins,Arial,sans-serif;font-size:17px;line-height:24px;color:var(--navy);margin:0}
+.dstep p{margin:0;font-size:13px;line-height:1.55;color:#5b5f73}
+.dstep:not(:last-child)::after{content:"";position:absolute;right:-21px;top:44px;width:11px;height:11px;border-top:3px solid var(--orange);border-right:3px solid var(--orange);transform:rotate(45deg)}
+.gov{border:1.5px dashed var(--navy);border-radius:14px;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.gov p{margin:0;font-size:14px;line-height:21px;color:#5b5f73}
+.gov p:first-of-type{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:15px;color:var(--navy)}
+.gov b{font-weight:400}
 .why .sub{margin-top:56px}
 .hero .btns{display:flex;flex-wrap:wrap;gap:14px}
 .btn.ghost{background:transparent;color:#fff;border-color:#fff;padding:18px 34px}
 .btn.ghost:hover{background:#fff;color:var(--orange)}
 @media (max-width:1100px){
-  .dlv{padding:36px 20px}
-  .dlv h2{font-size:30px;line-height:38px}
-  .flow{grid-template-columns:1fr}
+  .dlv{padding:56px 20px}
+  .dlv h2{font-size:28px}
+  .flow{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .flow .dstep:nth-child(3n)::after{display:none}
   .why .sub{margin-top:40px}
+}
+@media (max-width:640px){
+  .flow{grid-template-columns:minmax(0,1fr);gap:26px}
+  .flow .dstep::after,.flow .dstep:nth-child(3n)::after{display:block;right:auto;left:50%;top:auto;bottom:-19px;transform:translateX(-50%) rotate(135deg)}
+  .flow .dstep:last-child::after{display:none}
 }
 
 /* next best action */
