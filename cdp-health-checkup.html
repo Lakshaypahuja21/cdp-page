@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CDP Health Checkup | CDP Transformation – xponent.ai</title>
+<title>Agentic CDP Assessment | CDP Transformation – xponent.ai</title>
 <meta name="description" content="A read-only review of an existing CDP and warehouse in two to three weeks, with evidence behind every finding and a prioritised plan.">
 <style>
 /* Theme tokens measured from xponent.ai. Fonts are the site's own Gilroy files. */
@@ -179,7 +179,6 @@ section.blk>p.intro:empty{margin:6px 0 0}
 .act{margin-top:20px}
 
 /* template sections: quick ToC, why now, what we bring, business value */
-.tocbar{max-width:1440px;margin:0 auto;padding:20px 37px 6px}
 .why,.lower{padding:52px 37px 56px}
 .why .in,.lower .in{max-width:1366px;margin:0 auto}
 .why h2,.lower h2{font-size:38px;line-height:46px;color:var(--navy)}
@@ -196,11 +195,40 @@ section.blk>p.intro:empty{margin:6px 0 0}
 .asset .used{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .asset .used::before{content:"Used in";font-size:14px;line-height:1;color:#555;margin-right:2px}
 @media (max-width:1100px){
-  .tocbar{padding:16px 20px 4px}
   .why,.lower{padding:36px 20px}
   .why h2,.lower h2{font-size:30px;line-height:38px}
   .trio,.assets{grid-template-columns:1fr}
   .asset,.asset:nth-child(4),.asset:nth-child(5){grid-column:auto}
+}
+
+/* what we deliver (ported from the team draft: same markup and icons, site colours, fonts and card spec) and review-call additions */
+.dlv{background:var(--grey);padding:52px 37px 56px;border-top:1px solid #e3e3e3}
+.dlv .in{max-width:1366px;margin:0 auto;display:flex;flex-direction:column;gap:30px}
+.dlv .eyebrow{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:13px;line-height:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin:0 0 8px}
+.dlv h2{font-size:38px;line-height:46px;color:var(--navy)}
+.dlv .lead{margin:10px 0 0;max-width:780px}
+.agbar{background:var(--navy);color:#fff;padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.agbar p{margin:0;font-size:17px;line-height:26px}
+.agbar b{font-family:"Gilroy-Bold",Arial,sans-serif}
+.dico{width:46px;height:46px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;flex:none}
+.dico.soft{background:var(--peach)}
+.agbar .dico{width:34px;height:34px}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dstep{background:#fff;color:var(--ink);box-shadow:0 8px 22px rgba(0,0,0,.22);padding:24px 22px 28px;display:flex;flex-direction:column;gap:12px}
+.dstep h3{font-family:"Gilroy-Bold",Poppins,Arial,sans-serif;font-size:28px;line-height:35px;color:var(--ink);margin:0}
+.dstep p{margin:0;font-size:18px;line-height:28px}
+.gov{border:2px dashed var(--navy);padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.gov p{margin:0;font-size:17px;line-height:26px}
+.gov b{font-family:"Gilroy-Bold",Arial,sans-serif;color:var(--navy)}
+.why .sub{margin-top:56px}
+.hero .btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn.ghost{background:transparent;color:#fff;border-color:#fff;padding:18px 34px}
+.btn.ghost:hover{background:#fff;color:var(--orange)}
+@media (max-width:1100px){
+  .dlv{padding:36px 20px}
+  .dlv h2{font-size:30px;line-height:38px}
+  .flow{grid-template-columns:1fr}
+  .why .sub{margin-top:40px}
 }
 
 /* next best action */
@@ -323,18 +351,18 @@ section.blk>p.intro:empty{margin:6px 0 0}
   <div class="hero-grid">
     <div>
       <p class="kicker">CDP Transformation</p>
-      <h1 id="h1">CDP Health Checkup</h1>
+      <h1 id="h1">Agentic CDP Assessment</h1>
       <p class="lede">A read-only review of an existing CDP and warehouse in two to three weeks, with evidence behind every finding and a prioritised plan.</p>
-      <a class="btn white big" href="https://xponent.ai/contact-us/">Write to us for a quick CDP health checkup</a>
+      <a class="btn white big" href="https://xponent.ai/contact-us/">Write to us for a quick CDP assessment</a>
     </div>
-    <svg class="art" viewBox="0 0 640 440" role="img" aria-label="CDP Health Checkup: Review, Scoring, Roadmap"><rect width="640" height="440" fill="#0A8F88"/><circle cx="320" cy="230" r="205" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/><circle cx="320" cy="230" r="140" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 8"/><g stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-dasharray="3 7" fill="none"><path d="M320 230 L320 82"/><path d="M320 230 L500 330"/><path d="M320 230 L140 330"/></g><g font-family="Gilroy-Bold,Arial,sans-serif" font-size="17" text-anchor="middle"><rect x="245" y="60" width="150" height="44" rx="22" fill="#fff"/><text x="320" y="88" fill="#FF672E">Review</text><rect x="425" y="308" width="150" height="44" rx="22" fill="#fff"/><text x="500" y="336" fill="#FF672E">Scoring</text><rect x="65" y="308" width="150" height="44" rx="22" fill="#fff"/><text x="140" y="336" fill="#FF672E">Roadmap</text></g><circle cx="320" cy="230" r="82" fill="#FFAA05"/><circle cx="320" cy="230" r="68" fill="#FF672E"/><text x="320" y="225" text-anchor="middle" font-family="Gilroy-Bold,Arial,sans-serif" font-size="18" fill="#fff">CDP Health</text><text x="320" y="247" text-anchor="middle" font-family="Gilroy-Bold,Arial,sans-serif" font-size="18" fill="#fff">Checkup</text></svg>
+    <svg class="art" viewBox="0 0 640 440" role="img" aria-label="Agentic CDP Assessment: Review, Scoring, Roadmap"><rect width="640" height="440" fill="#0A8F88"/><circle cx="320" cy="230" r="205" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/><circle cx="320" cy="230" r="140" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 8"/><g stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-dasharray="3 7" fill="none"><path d="M320 230 L320 82"/><path d="M320 230 L500 330"/><path d="M320 230 L140 330"/></g><g font-family="Gilroy-Bold,Arial,sans-serif" font-size="17" text-anchor="middle"><rect x="245" y="60" width="150" height="44" rx="22" fill="#fff"/><text x="320" y="88" fill="#FF672E">Review</text><rect x="425" y="308" width="150" height="44" rx="22" fill="#fff"/><text x="500" y="336" fill="#FF672E">Scoring</text><rect x="65" y="308" width="150" height="44" rx="22" fill="#fff"/><text x="140" y="336" fill="#FF672E">Roadmap</text></g><circle cx="320" cy="230" r="82" fill="#FFAA05"/><circle cx="320" cy="230" r="68" fill="#FF672E"/><text x="320" y="225" text-anchor="middle" font-family="Gilroy-Bold,Arial,sans-serif" font-size="18" fill="#fff">Agentic CDP</text><text x="320" y="247" text-anchor="middle" font-family="Gilroy-Bold,Arial,sans-serif" font-size="18" fill="#fff">Assessment</text></svg>
   </div>
 </section>
 
 <nav class="pn" aria-label="Previous and next service"><a href="audience-activation.html">&larr; Previous: Audience Activation</a><a href="index.html">CDP Transformation &rarr;</a></nav>
 <section class="band peach" aria-labelledby="s1"><div class="row">
   <div class="sc"><h2 id="s1">Source and Identity Review: What Is Collected and How It Joins</h2>
-    <p>The review begins with a list of every customer data source, its identifiers and its consent records. Match rates and duplicate rates are measured on live data in read-only mode. The output shows which sources join cleanly, which join poorly and which customers cannot be reached for lack of consent.</p></div>
+    <p>The review begins with a list of every customer data source, its identifiers and its consent records. The share of customers matched across systems and the number of duplicate records are measured on live data, without changing anything. The output shows which sources join cleanly, which join poorly and which customers cannot be reached for lack of consent.</p></div>
   <div class="gfx"><div class="pill">Source and Identity Review</div>
     <svg viewBox="0 0 600 340" role="img" aria-label="Sources, identity and consent reviewed in read-only mode, each with a measured result and linked evidence"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FF672E"/></marker></defs><rect x="16" y="22" width="180" height="230" rx="12" fill="#fff" stroke="#FF672E" stroke-width="2"/><rect x="16" y="22" width="180" height="38" rx="12" fill="#FF672E"/><text class="b w" x="106.0" y="46.25" font-size="15" text-anchor="middle">SOURCES</text><text x="106" y="96" font-size="14" text-anchor="middle">Join quality</text><rect x="36" y="112" width="140" height="18" rx="9" fill="#E3E3E3"/><rect x="36" y="112" width="105" height="18" rx="9" fill="#FFAA05"/><rect x="36" y="152" width="110" height="8" fill="#E3E3E3"/><rect x="36" y="172" width="84" height="8" fill="#E3E3E3"/><rect x="46" y="204" width="120" height="30" rx="15" fill="#FFAA05"/><text x="106.0" y="223.55" font-size="13" text-anchor="middle">evidence</text><rect x="212" y="22" width="180" height="230" rx="12" fill="#fff" stroke="#FF672E" stroke-width="2"/><rect x="212" y="22" width="180" height="38" rx="12" fill="#FF672E"/><text class="b w" x="302.0" y="46.25" font-size="15" text-anchor="middle">IDENTITY</text><text x="302" y="96" font-size="14" text-anchor="middle">Duplicate rate</text><rect x="232" y="112" width="140" height="18" rx="9" fill="#E3E3E3"/><rect x="232" y="112" width="56" height="18" rx="9" fill="#FFAA05"/><rect x="232" y="152" width="110" height="8" fill="#E3E3E3"/><rect x="232" y="172" width="84" height="8" fill="#E3E3E3"/><rect x="242" y="204" width="120" height="30" rx="15" fill="#FFAA05"/><text x="302.0" y="223.55" font-size="13" text-anchor="middle">evidence</text><rect x="408" y="22" width="180" height="230" rx="12" fill="#fff" stroke="#FF672E" stroke-width="2"/><rect x="408" y="22" width="180" height="38" rx="12" fill="#FF672E"/><text class="b w" x="498.0" y="46.25" font-size="15" text-anchor="middle">CONSENT</text><text x="498" y="96" font-size="14" text-anchor="middle">Reachable customers</text><rect x="428" y="112" width="140" height="18" rx="9" fill="#E3E3E3"/><rect x="428" y="112" width="84" height="18" rx="9" fill="#FFAA05"/><rect x="428" y="152" width="110" height="8" fill="#E3E3E3"/><rect x="428" y="172" width="84" height="8" fill="#E3E3E3"/><rect x="438" y="204" width="120" height="30" rx="15" fill="#FFAA05"/><text x="498.0" y="223.55" font-size="13" text-anchor="middle">evidence</text><rect x="40" y="278" width="520" height="44" rx="22" fill="#FF672E"/><text class="b w" x="300.0" y="305.6" font-size="16" text-anchor="middle">MEASURED ON LIVE DATA · READ-ONLY</text></svg>
   </div>
@@ -342,7 +370,7 @@ section.blk>p.intro:empty{margin:6px 0 0}
 
 <section class="band" aria-labelledby="s2"><div class="row flip">
   <div class="sc"><h2 id="s2">Quality and Maturity Scoring: Every Score Linked to Evidence</h2>
-    <p>Quality and Maturity Scoring rates data quality, identity, definitions, activation and governance on one scale. AI agents run the repetitive checks, such as null rates, duplicate counts and stale feeds. Each score links to the query or record that supports it, so any finding can be checked.</p></div>
+    <p>Quality and Maturity Scoring rates data quality, identity, definitions, activation and governance on one scale. AI agents run the repetitive checks, such as missing values, duplicate records and out-of-date feeds. Each score links to the query or record that supports it, so any finding can be checked.</p></div>
   <div class="gfx"><div class="pill">Quality and Maturity Scoring</div>
     <svg viewBox="0 0 600 340" role="img" aria-label="Five areas scored on one scale, each score linked to its evidence, with AI agents running checks and consultants reviewing"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FF672E"/></marker></defs><text x="20" y="45" font-size="15" text-anchor="start">Data quality</text><rect x="150" y="28" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="28" width="189" height="20" rx="10" fill="#FF672E"/><rect x="446" y="26" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="43.2" font-size="12" text-anchor="middle">linked evidence</text><text x="20" y="97" font-size="15" text-anchor="start">Identity</text><rect x="150" y="80" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="80" width="135" height="20" rx="10" fill="#FF672E"/><rect x="446" y="78" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="95.2" font-size="12" text-anchor="middle">linked evidence</text><text x="20" y="149" font-size="15" text-anchor="start">Definitions</text><rect x="150" y="132" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="132" width="162" height="20" rx="10" fill="#FF672E"/><rect x="446" y="130" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="147.2" font-size="12" text-anchor="middle">linked evidence</text><text x="20" y="201" font-size="15" text-anchor="start">Activation</text><rect x="150" y="184" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="184" width="108" height="20" rx="10" fill="#FF672E"/><rect x="446" y="182" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="199.2" font-size="12" text-anchor="middle">linked evidence</text><text x="20" y="253" font-size="15" text-anchor="start">Governance</text><rect x="150" y="236" width="270" height="20" rx="10" fill="#E3E3E3"/><rect x="150" y="236" width="148" height="20" rx="10" fill="#FF672E"/><rect x="446" y="234" width="126" height="26" rx="13" fill="#FFAA05"/><text x="509.0" y="251.2" font-size="12" text-anchor="middle">linked evidence</text><rect x="20" y="284" width="270" height="40" rx="20" fill="#FF672E"/><text class="b w" x="155.0" y="308.9" font-size="14" text-anchor="middle">AI AGENTS RUN THE CHECKS</text><rect x="310" y="284" width="270" height="40" rx="20" fill="#FF672E"/><text class="b w" x="445.0" y="308.9" font-size="14" text-anchor="middle">CONSULTANTS REVIEW</text></svg>
   </div>
@@ -357,7 +385,7 @@ section.blk>p.intro:empty{margin:6px 0 0}
 </div></section>
 
 <section class="deliver" aria-labelledby="dh"><div class="in">
-  <h2 id="dh">What you receive</h2>
+  <h2 id="dh">What we deliver</h2>
   <div class="dgrid two">
     <article class="asset"><div class="prev"><div class="r"><em>Collect</em><span class="trk"><i style="width:70%"></i></span></div><div class="r"><em>Unify</em><span class="trk"><i style="width:55%"></i></span></div><div class="r"><em>Activate</em><span class="trk"><i style="width:45%"></i></span></div><div class="r"><em>Measure</em><span class="trk"><i style="width:40%"></i></span></div><div class="r"><em>Govern</em><span class="trk"><i style="width:60%"></i></span></div></div><h3>Maturity scorecard</h3><p>Each area scored on one scale, with the evidence behind every rating.</p></article>
     <article class="asset"><div class="prev"><div class="fl"><div class="col"><span class="nd">Web</span><span class="nd">Store</span><span class="nd">CRM</span></div><span class="ar">&rarr;</span><span class="hub">CDP</span><span class="ar">&rarr;</span><div class="col"><span class="nd ok">Email &#10003;</span><span class="nd no">Ads &#10005;</span><span class="nd ok">Reports &#10003;</span></div></div></div><h3>Flow map</h3><p>Every path from source to destination traced, with the broken ones marked.</p></article>
@@ -367,7 +395,7 @@ section.blk>p.intro:empty{margin:6px 0 0}
 </div></section>
 
 <section class="cta" aria-labelledby="ctah">
-  <h2 id="ctah">Write to us for a quick CDP health checkup</h2>
+  <h2 id="ctah">Write to us for a quick CDP assessment</h2>
   <p>Tell us where your customer data is today. We will tell you what to fix first.</p>
   <a class="btn solid big" href="https://xponent.ai/contact-us/">Write to us</a>
 </section>
