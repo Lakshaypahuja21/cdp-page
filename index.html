@@ -178,6 +178,31 @@ section.blk>p.intro:empty{margin:6px 0 0}
 
 .act{margin-top:20px}
 
+/* template sections: quick ToC, why now, what we bring, business value */
+.tocbar{max-width:1440px;margin:0 auto;padding:20px 37px 6px}
+.why,.lower{padding:52px 37px 56px}
+.why .in,.lower .in{max-width:1366px;margin:0 auto}
+.why h2,.lower h2{font-size:38px;line-height:46px;color:var(--navy)}
+.lower .intro{margin:10px 0 0;max-width:860px}
+.lower.grey{background:var(--grey)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
+.assets{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;margin-top:26px}
+.asset{grid-column:span 2}
+.asset:nth-child(4){grid-column:2 / span 2}
+.asset:nth-child(5){grid-column:4 / span 2}
+.trio .asset{grid-column:auto}
+.asset .ico{display:flex;width:56px;height:56px;background:var(--peach);align-items:center;justify-content:center;border-radius:12px;margin-bottom:16px}
+.asset .ico svg{width:30px;height:30px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.asset .used{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.asset .used::before{content:"Used in";font-size:14px;line-height:1;color:#555;margin-right:2px}
+@media (max-width:1100px){
+  .tocbar{padding:16px 20px 4px}
+  .why,.lower{padding:36px 20px}
+  .why h2,.lower h2{font-size:30px;line-height:38px}
+  .trio,.assets{grid-template-columns:1fr}
+  .asset,.asset:nth-child(4),.asset:nth-child(5){grid-column:auto}
+}
+
 /* next best action */
 .cta{background:var(--peach);color:var(--ink);text-align:center;padding:56px 37px;margin-top:0}
 .cta h2{font-size:38px;line-height:48px;color:var(--navy)}
@@ -269,6 +294,22 @@ section.blk>p.intro:empty{margin:6px 0 0}
     </svg>
   </div>
 </section>
+
+<!-- tpl:toc -->
+<nav class="tocbar" aria-label="On this page"><div class="toc">
+  <a href="#why">Why now</a><a href="#s1">What we do</a><a href="#approach">How we work</a><a href="#bring">What we bring</a><a href="#value">Business value</a><a href="#ctah">Write to us</a>
+</div></nav>
+<!-- /tpl:toc -->
+<!-- tpl:why -->
+<section class="why" id="why" aria-labelledby="whyh"><div class="in">
+  <h2 id="whyh">Why customer data needs a foundation before AI</h2>
+  <div class="trio">
+    <article class="asset"><h3>One customer, many records</h3><p>The same shopper sits in store, web, email and ad systems as separate records, so spend and personalisation are split between them.</p></article>
+    <article class="asset"><h3>Data teams stop trusting</h3><p>Broken tracking, stale fields and missing consent send marketing back to spreadsheets and to asking the same question twice.</p></article>
+    <article class="asset"><h3>AI without a solid base</h3><p>AI assistants and agents need clean, consented customer data and shared definitions. Without them, they answer with confidence and get it wrong.</p></article>
+  </div>
+</div></section>
+<!-- /tpl:why -->
 
 <section class="band peach" aria-labelledby="s1"><div class="row">
   <div class="sc"><h2 id="s1">Customer Foundation: One Customer Across Every Channel</h2>
@@ -379,6 +420,29 @@ section.blk>p.intro:empty{margin:6px 0 0}
   </div>
   <ul class="own" aria-label="What you keep"><li>Documented</li><li>Handed over</li><li>Yours to explain</li></ul>
 </div></section>
+
+<!-- tpl:lower -->
+<section class="lower" id="bring" aria-labelledby="bringh"><div class="in">
+  <h2 id="bringh">What we bring</h2>
+  <p class="intro">Ready-made assets, so the work starts ahead.</p>
+  <div class="assets">
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Identity Health Audit</h3><p>A repeatable check of duplicates, shared identifiers and match quality.</p><p class="used"><span>Customer Foundation</span><span>CDP Health Checkup</span></p></article>
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M8 8h7M8 12h7"/></svg></span><h3>Customer Metric Register</h3><p>Every customer measure defined once, in plain language, and kept in one place.</p><p class="used"><span>AI Customer Intelligence</span></p></article>
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3"/><path d="M20 16H7l3 3"/></svg></span><h3>Change-only Delivery Pattern</h3><p>A tested way to load once, then send only what changed.</p><p class="used"><span>Audience Activation</span></p></article>
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7"/><path d="M12 17h.01"/></svg></span><h3>Benchmark Question Set</h3><p>Questions with known answers, used to test your AI assistant before launch.</p><p class="used"><span>AI Customer Intelligence</span></p></article>
+    <article class="asset"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="5" width="12" height="16" rx="2"/><path d="M9 5h6v2H9z"/><path d="M9 14l2 2 4-4"/></svg></span><h3>CDP Health Checkup Framework</h3><p>A maturity review across collect, unify, activate, measure and govern, with evidence behind every finding.</p><p class="used"><span>CDP Health Checkup</span></p></article>
+  </div>
+</div></section>
+
+<section class="lower grey" id="value" aria-labelledby="valh"><div class="in">
+  <h2 id="valh">What it means for the business</h2>
+  <div class="trio">
+    <article class="asset"><h3>Less wasted spend</h3><p>Customers you already have drop out of acquisition audiences, and budget moves to people you have not yet reached.</p></article>
+    <article class="asset"><h3>One answer to each question</h3><p>With one definition per measure, every report gives the same number and decisions stop waiting on reconciliation.</p></article>
+    <article class="asset"><h3>Lower risk</h3><p>Consent and opt-outs apply from one record, and every AI step is logged and approved by a person.</p></article>
+  </div>
+</div></section>
+<!-- /tpl:lower -->
 
 <!-- Next best action -->
 <section class="cta" aria-labelledby="ctah">
