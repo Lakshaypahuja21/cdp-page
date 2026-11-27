@@ -178,6 +178,31 @@ section.blk>p.intro:empty{margin:6px 0 0}
 
 .act{margin-top:20px}
 
+/* template sections: quick ToC, why now, what we bring, business value */
+.tocbar{max-width:1440px;margin:0 auto;padding:20px 37px 6px}
+.why,.lower{padding:52px 37px 56px}
+.why .in,.lower .in{max-width:1366px;margin:0 auto}
+.why h2,.lower h2{font-size:38px;line-height:46px;color:var(--navy)}
+.lower .intro{margin:10px 0 0;max-width:860px}
+.lower.grey{background:var(--grey)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
+.assets{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;margin-top:26px}
+.asset{grid-column:span 2}
+.asset:nth-child(4){grid-column:2 / span 2}
+.asset:nth-child(5){grid-column:4 / span 2}
+.trio .asset{grid-column:auto}
+.asset .ico{display:flex;width:56px;height:56px;background:var(--peach);align-items:center;justify-content:center;border-radius:12px;margin-bottom:16px}
+.asset .ico svg{width:30px;height:30px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.asset .used{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.asset .used::before{content:"Used in";font-size:14px;line-height:1;color:#555;margin-right:2px}
+@media (max-width:1100px){
+  .tocbar{padding:16px 20px 4px}
+  .why,.lower{padding:36px 20px}
+  .why h2,.lower h2{font-size:30px;line-height:38px}
+  .trio,.assets{grid-template-columns:1fr}
+  .asset,.asset:nth-child(4),.asset:nth-child(5){grid-column:auto}
+}
+
 /* next best action */
 .cta{background:var(--peach);color:var(--ink);text-align:center;padding:56px 37px;margin-top:0}
 .cta h2{font-size:38px;line-height:48px;color:var(--navy)}
@@ -213,7 +238,47 @@ section.blk>p.intro:empty{margin:6px 0 0}
 .deliver h2{font-size:38px;line-height:46px;color:var(--navy)}
 .dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
 .act{margin-top:20px}
+/* extra bands borrowed in idea from the team draft, rebuilt in site colours and the one card spec */
+.band.grey{background:var(--grey)}
+.band .head{max-width:1366px;margin:0 auto 26px}
+.band .head h2{font-size:38px;line-height:46px;color:var(--navy)}
+.band .head p{margin:10px 0 0;max-width:860px}
+.pcard .eyebrow{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:13px;line-height:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin:0 0 14px}
+.pcard .who{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+.pcard .av{width:52px;height:52px;border-radius:50%;background:var(--orange);color:#fff;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none}
+.pcard .who b{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:22px;line-height:28px;display:block;margin-bottom:6px}
+.pcard .pf{display:flex;justify-content:space-between;gap:16px;border-top:1px solid #e3e3e3;padding:11px 0;font-size:17px;line-height:25px}
+.pcard .pf span{color:#555}
+.pcard .pf b{font-family:"Gilroy-Bold",Arial,sans-serif;text-align:right}
+.pcard .grp{font-family:"Gilroy-Bold",Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin:12px 0 8px;border-top:1px solid #e3e3e3;padding-top:12px}
+.pcard .chs{display:flex;gap:8px;flex-wrap:wrap}
+.pcard .chs span{display:inline-block;background:var(--amber);color:#111;font-size:14px;line-height:1;padding:7px 14px;border-radius:50px}
+.pcard .chs span.line{background:#fff;border:2px solid var(--orange);padding:5px 12px}
+.quad{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.dgrid.two{grid-template-columns:repeat(2,1fr)}
+.dgrid .asset,.quad .asset{grid-column:auto}
+.prev{background:var(--grey);padding:16px;margin:0 0 18px;min-height:190px;display:flex;flex-direction:column;gap:9px;justify-content:center}
+.prev .r{display:flex;align-items:center;gap:12px;font-size:15px;line-height:20px}
+.prev .r em{font-style:normal;width:96px;flex:none}
+.prev .trk{flex:1;height:14px;border-radius:7px;background:#e3e3e3;overflow:hidden}
+.prev .trk i{display:block;height:100%;background:var(--orange)}
+.prev .tg{display:inline-block;flex:none;width:92px;text-align:center;font-size:12.5px;line-height:1;padding:6px 0;border-radius:50px;background:var(--amber);color:#111}
+.prev .tg.big{background:var(--orange);color:#fff}
+.prev .fl{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.prev .fl .col{display:flex;flex-direction:column;gap:8px}
+.prev .fl .nd{background:#fff;border:2px solid var(--orange);border-radius:8px;padding:6px 12px;font-size:14px;line-height:18px;text-align:center}
+.prev .fl .nd.ok{background:var(--amber);border-color:var(--amber)}
+.prev .fl .nd.no{border-style:dashed}
+.prev .fl .hub{background:var(--orange);color:#fff;border-radius:50px;padding:12px 16px;font-family:"Gilroy-Bold",Arial,sans-serif;font-size:15px}
+.prev .fl .ar{color:var(--orange);font-size:20px}
+.prev .doc{background:#fff;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.prev .doc .bar{display:block;height:8px;background:#e3e3e3}
+.prev .doc .hd{display:block;height:10px;width:46%;background:var(--orange)}
+.prev .doc .ft{display:flex;gap:8px;margin-top:4px}
 @media (max-width:1100px){
+  .band .head{padding:0}
+  .band .head h2{font-size:30px;line-height:38px}
+  .quad,.dgrid.two{grid-template-columns:1fr}
   .deliver{padding:36px 20px}
   .deliver h2{font-size:30px;line-height:38px}
   .dgrid{grid-template-columns:1fr}
@@ -289,6 +354,16 @@ section.blk>p.intro:empty{margin:6px 0 0}
   <div class="gfx"><div class="pill">Channel Delivery</div>
     <svg viewBox="0 0 600 340" role="img" aria-label="An audience is delivered as changes only to email, ad platforms and store lists, and conversion events are returned"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FF672E"/></marker></defs><rect x="14" y="100" width="140" height="70" rx="8" fill="#fff" stroke="#FF672E" stroke-width="2"/><text class="b" x="84.0" y="140.6" font-size="16" text-anchor="middle">Audience</text><path d="M154 135 L204 135" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><circle cx="258" cy="135" r="54" fill="#FF672E"/><text class="b w" x="258" y="132" font-size="16" text-anchor="middle">Delivery</text><text class="w" x="258" y="152" font-size="12" text-anchor="middle" style="fill:#fff">changes only</text><path d="M310 118 L418 66" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><path d="M312 135 L418 135" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><path d="M310 152 L418 204" stroke="#FF672E" stroke-width="2.5" fill="none" marker-end="url(#ah)"/><rect x="420" y="44" width="166" height="44" rx="8" fill="#FFAA05"/><text x="503.0" y="71.25" font-size="15" text-anchor="middle">Email</text><rect x="420" y="112" width="166" height="44" rx="8" fill="#FFAA05"/><text x="503.0" y="138.9" font-size="14" text-anchor="middle">Store outreach lists</text><rect x="420" y="182" width="166" height="44" rx="8" fill="#FFAA05"/><text x="503.0" y="208.9" font-size="14" text-anchor="middle">Advertising platforms</text><path d="M503 226 C503 270 258 270 258 192" stroke="#FF672E" stroke-width="2.5" fill="none" stroke-dasharray="5 5" marker-end="url(#ah)"/><text x="300" y="292" font-size="13" text-anchor="middle">Purchase and conversion events return to the ad platform</text><rect x="150" y="304" width="300" height="30" rx="15" fill="#FFAA05"/><text x="300.0" y="323.55" font-size="13" text-anchor="middle">Audience membership logged for every send</text></svg>
   </div>
+</div></section>
+
+<section class="band grey" aria-labelledby="ouh"><div class="head">
+  <h2 id="ouh">What marketing teams do with it</h2>
+  <p>Four outcomes that follow once audiences, consent and delivery sit on one customer record.</p>
+</div><div class="quad" style="max-width:1366px;margin:0 auto">
+  <article class="asset"><h3>Win back customers before they lapse</h3><p>Customers whose activity is slowing are found early and reached with one offer across email, SMS and social.</p></article>
+  <article class="asset"><h3>Stop paying to acquire existing customers</h3><p>Known buyers are excluded from acquisition audiences, so the budget goes to people who have not bought yet.</p></article>
+  <article class="asset"><h3>Give ad platforms real revenue</h3><p>Purchases return with their value and a customer match, so campaigns optimise towards sales and not clicks.</p></article>
+  <article class="asset"><h3>Personalise with full context</h3><p>Browse and basket journeys take account of what the customer already owns and has agreed to receive.</p></article>
 </div></section>
 
 <section class="deliver" aria-labelledby="dh"><div class="in">
